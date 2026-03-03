@@ -7,10 +7,6 @@
 
     <link href="styles/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-    </style>
 </head>
 
 
@@ -120,30 +116,25 @@
 
             <fieldset class="mainFieldset test" >
                 <legend>
-                        Hadden de overledene en diens partner een finaal verrekenbeding?
+                        Was de overledene getrouwd of had de overledene eengeregistreerde partner op het moment van overlijden?
                 </legend>
 
                 <div class="mainHolder">
-                    <div class="holder">
-                        <label for="1b-3-ja">Ja</label>
-                        <input type="radio" id="1b-3-ja" name="finaalVerrekenbeding" value="ja">
-                    </div>
+                        <div class="holder">
+                            <label for="1b-1-ja">Ja</label>
+                            <input type="radio" id="1b-1-ja" name="getrouwd" value="ja">
+                        </div>
 
                     <div class="holder">
-                        <label for="1b-3-nee">Nee</label>
-                        <input type="radio" id="1b-3-nee" name="finaalVerrekenbeding" value="nee">
+                        <label for="1b-1-nee">Nee</label>
+                            <input type="radio" id="1b-1-nee" name="getrouwd" value="nee">
+                        </div>
                     </div>
-                </div>
-            </fieldset>
-
-            <fieldset class="mainFieldset test">
-                    <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
-                    <input type="date" id="datumHuwelijkseVoorwaarden" name="datumHuwelijkseVoorwaarden">
             </fieldset>
 
             
 
-            <!-- <fieldset class="mainFieldset">
+            <fieldset class="mainFieldset">
                 <legend>
                     Gegevens van de erfgenaam
                 </legend>
@@ -204,91 +195,9 @@
                     <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
                     <input type="date" id="datumHuwelijkseVoorwaarden" name="datumHuwelijkseVoorwaarden">
                 </fieldset>
-            </fieldset> -->
-
-
-            <div class="subheading">
-                <h2>
-                Gegevens van de kinderen
-                </h2>
-
-                <hr>
-            </div>
-
-            <fieldset class="mainFieldset test" >
-                <legend>
-                    Had de overledene kinderen?
-                </legend>
-
-                <div class="mainHolder">
-                        <div class="holder">
-                            <label for="1c-1-ja">Ja</label>
-                        <input type="radio" id="1c-1-ja" name="kinderen" value="ja">
-                        </div>
-
-                    <div class="holder">
-                        <label for="1c-1-nee">Nee</label>
-                            <input type="radio" id="1c-1-nee" name="kinderen" value="nee">
-                        </div>
-                    </div>
             </fieldset>
 
-            <fieldset class="mainFieldset test" >
-                <legend>
-                    Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
-                </legend>
-
-                <div class="mainHolder">
-                    <div class="holder">
-                        <label for="1c-2-ja">Ja</label>
-                        <input type="radio" id="1c-2-ja" name="kinderenOverleden" value="ja"> 
-                    </div>
-
-                    <div class="holder">
-                        <label for="1c-2-nee">Nee</label>
-                        <input type="radio" id="1c-2-nee" name="kinderenOverleden" value="nee">
-                        </div>
-                    </div>
-            </fieldset>
-
-            <fieldset class="mainFieldset test" >
-                <legend>
-                    Had dit overleden kind zelf kinderen?
-                </legend>
-
-                <div class="mainHolder">
-                    <div class="holder">
-                        <label for="1c-3-ja">Ja</label>
-                        <input type="radio" id="1c-3-ja" name="kleinkinderen" value="ja">
-                    </div>
-
-                    <div class="holder">
-                        <label for="1c-3-nee">Nee</label>
-                        <input type="radio" id="1c-3-nee" name="kleinkinderen" value="nee">
-                        </div>
-                    </div>
-            </fieldset>
-
-            <fieldset class="mainFieldset test" >
-                <legend>
-                    Had de overledene een testament?
-                </legend>
-
-                <div class="mainHolder">
-                    <div class="holder">
-                        <label for="1c-4-ja">Ja</label>
-                        <input type="radio" id="1c-4-ja" name="testament" value="ja">
-                    </div>
-
-                    <div class="holder">
-                        <label for="1c-4-nee">Nee</label>
-                        <input type="radio" id="1c-4-nee" name="testament" value="nee">
-                        </div>
-                    </div>
-            </fieldset>
-
-            
-            <!-- <fieldset>
+            <fieldset>
                 <legend>Gegevens van de kinderen</legend>
 
                 <fieldset>
@@ -337,7 +246,7 @@
                     <label for="1c-4-nee">Nee</label>
                     <input type="radio" id="1c-4-nee" name="testament" value="nee">
                 </fieldset>
-            </fieldset> -->
+            </fieldset>
   
             
         </form>

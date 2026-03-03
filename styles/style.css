@@ -1,0 +1,153 @@
+*, *::after, *::before {
+    box-sizing:border-box;  
+}
+
+*{
+	margin: 0;
+}
+
+html{
+	scroll-behavior: smooth;
+
+    color-scheme: light dark;
+    --colour-background: #FFC917;
+    --colour-secondary-background: #E6E6E9;
+    --colour-grey:#F7F7F9;
+    --colour-text: #003082;
+    --colour-text-secondary: #0063D3;
+    --colour-secondary: #ffffff;
+
+    font-family: 'Roboto', sans-serif;
+    color: var(--colour-text);
+    /* background-color: var(--colour-grey); */
+    background-color: var(--colour-secondary);
+}
+
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--colour-background);
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+section{
+    padding: 1em 12em;
+    /* max-width: 40vw; */
+    display: block;
+    margin: 0 auto;
+}
+
+fieldset{
+    /* border: 1px solid var(--colour-text); */
+    border: none;
+    border-radius: 12px;
+    /* padding: 1.5em; */
+    padding: 0;
+    margin-bottom: 1em;
+
+    display: flex;
+    flex-direction: column;
+    /* gap: 1em; */
+    background-color: var(--colour-secondary);
+    filter: drop-shadow(5px 5px 4px var(--colour-secondary-background));
+}
+
+fieldset label{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 0.5em 0;
+}
+
+fieldset input{
+    padding: 0.5em;
+    border: 1px solid #73747A;
+    border-radius: 4px;
+    margin-bottom: 1em;
+}
+
+/* section:nth-of-type(2) fieldset{
+    border: none;
+} */
+
+.mainHolder{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.holder{
+    padding: 0.2em 0;
+    width: 100%;
+}
+
+.holder input{
+    display: none;
+}
+
+.holder label{
+    padding: 1.4em;
+    border: 1px solid #C4C4CA;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    color: #73747A;
+
+    font-weight: 200;
+}
+
+.holder label:hover{
+    border: 1px solid #73747A;
+    
+}
+
+.holder:has(input:checked) label {
+    border: 3px solid var(--colour-text-secondary);
+    /* transition: 0.3s; */
+
+}
+
+.mainFieldset{
+    /* background-color: var(--colour-background); */
+    font-weight: bold;
+}
+
+label{
+    font-weight: normal;
+}
+
+.questionFieldset{
+    filter: none;
+    font-weight: normal;
+}
+
+hr{
+    margin-top: 2em;
+    width: 40%;
+    border: 2.5px solid var(--colour-background);
+}
+
+.test{
+    filter: none;
+    background-color: transparent;
+    margin-bottom: 2em;
+    padding-bottom: 0.5em;
+}
+
+.test legend{
+    margin-bottom: 0.8em;
+}
+
+.subheading{
+    margin: 4em 0 2.5em 0;
+}
