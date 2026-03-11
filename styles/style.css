@@ -21,6 +21,13 @@ html{
     color: var(--colour-text);
     /* background-color: var(--colour-grey); */
     background-color: var(--colour-secondary);
+    letter-spacing: 0.3px;
+}
+
+#date, #datumHuwelijkseVoorwaarden{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.3px;
+    color: rgb(141, 137, 137);
 }
 
 
@@ -41,10 +48,22 @@ nav{
 }
 
 section{
-    padding: 1em 12em;
+    margin: 1em 20em;
     /* max-width: 40vw; */
     display: block;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+}
+
+/* styling eerste section */
+section:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding-top: 3em;
+}
+
+section:nth-of-type(1) p{
+    color: rgb(141, 137, 137);
 }
 
 fieldset{
@@ -59,7 +78,7 @@ fieldset{
     flex-direction: column;
     /* gap: 1em; */
     background-color: var(--colour-secondary);
-    filter: drop-shadow(5px 5px 4px var(--colour-secondary-background));
+    /* filter: drop-shadow(5px 5px 4px var(--colour-secondary-background));  */
 }
 
 fieldset label{
@@ -70,7 +89,8 @@ fieldset label{
 }
 
 fieldset input{
-    padding: 0.5em;
+    /* padding: 0.5em; */
+    padding: 1.2em;
     border: 1px solid #73747A;
     border-radius: 4px;
     margin-bottom: 1em;
@@ -80,6 +100,19 @@ fieldset input{
     border: none;
 } */
 
+.name{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.name label{
+    flex-grow: 1;
+}
+
+.name label:nth-child(3){
+    flex-grow: 5;
+}
 .mainHolder{
     display: flex;
     flex-direction: row;
@@ -96,7 +129,7 @@ fieldset input{
 }
 
 .holder label{
-    padding: 1.4em;
+    padding: 1.2em;
     border: 1px solid #C4C4CA;
     border-radius: 8px;
     cursor: pointer;
@@ -104,6 +137,11 @@ fieldset input{
     color: #73747A;
 
     font-weight: 200;
+}
+
+
+.mainFieldset input, .holder label{
+    font-size: 14px;
 }
 
 .holder label:hover{
@@ -133,7 +171,7 @@ label{
 
 hr{
     margin-top: 2em;
-    width: 40%;
+    width: 20%;
     border: 2.5px solid var(--colour-background);
 }
 
@@ -151,3 +189,75 @@ hr{
 .subheading{
     margin: 4em 0 2.5em 0;
 }
+
+.error{
+    color: red;
+    display: none;
+}
+
+#datumHuwelijkseVoorwaarden{
+    width: 100%;
+    cursor: pointer;
+}
+
+fieldset:has(input[id="voorletters"]:user-invalid) .error{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
+
+/* .mainFieldset:has(input[name="getrouwd"][value="ja"]:checked) {
+    +.mainFieldset.hidden{
+        display: block; 
+    }
+
+    .mainFieldset:has(input[name="huwelijkseVoorwaarden"][value="ja"]:checked) .mainFieldset.hidden{
+        display: block; 
+    }
+} */
+
+/* .mainFieldset:has(input[name="huwelijkseVoorwaarden"][value="ja"]:checked) 
++ .mainFieldset.hidden {
+    display: block;
+} */
+
+/* .mainFieldset:has(input[name="getrouwd"][value="nee"]:checked) {
+    .hidden {
+         display: none;
+    }
+} */
+
+
+.mainFieldset:has(input[name="getrouwd"][value="ja"]:checked) {
+    + .mainFieldset.hidden {
+        display: block;
+
+        &:has(input[name="huwelijkseVoorwaarden"][value="ja"]:checked) {
+            + .mainFieldset.hidden {
+                display: block;
+            }
+            ~ .mainFieldset.hidden:has(input[type="date"]) {
+                display: block;
+            }
+        }
+    }
+}
+
+.mainFieldset:has(input[name="kinderen"][value="ja"]:checked) {
+    + .mainFieldset.hidden {
+        display: block;
+
+        &:has(input[name="kinderenOverleden"][value="ja"]:checked) {
+            + .mainFieldset.hidden {
+                display: block;
+            }
+        }
+    }
+}
+
+label[for="protocolNummer"]{
+    margin-top: 1em;
+}
+

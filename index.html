@@ -26,11 +26,15 @@
         <h1>
             Aangifte erfbelasting
         </h1>
-        <hr>
+        <p>
+            Met dit formulier doet u aangifte erfbelasting voor een overlijden in 2025 voor alle personen en instellingen die iets krijgen uit de nalatenschap. 
+        </p>
+        <!-- <hr> -->
     </section>
 
     <section>
-        <form action= "." method="get">
+        <!-- <form action= "." method="get"> -->
+        <form>
             <div class="subheading">
                 <h2>
                     Gegevens van de overledene
@@ -42,32 +46,42 @@
                     Gegevens van de overledene
                 </legend>
 
+                <div class="name">
+                    <label for="voorletters">Voorletter(s)
+                        <input id="voorletters" type="text" required>
+                    </label>
+                
+                    <label for="tussenvoegsel">Tussenvoegsel(s)
+                        <input id="tussenvoegsel" type="text">
+                    </label>
+                
+                    <label for="achternaam">Achternaam
+                        <input id="achternaam" type="text" required>
+                    </label>
+                </div>
+
+                <p class="error" id="error-id" aria-live="polite">Dit veld is incorrect</p>
+                
+                <div class="name">
+                    <label for="bsn">Bsn overledene
+                        <input id="bsn" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                    </label>
+                
+                    <label for="date">Overlijdensdatum
+                        <input id="date" type="date" required>
+                    </label>
+                </div>
+
+                
+                
+
                 <!-- <label for="voorletters">Voorletter(s)
                     <input id="voorletters" type="text" required>
                 </label>
                 
-                <label for="tussenvoegsel">Tussenvoegsel(s)
-                    <input id="tussenvoegsel" type="text" required>
-                </label>
-                
-                <label for="achternaam">Achternaam
-                    <input id="achternaam" type="text" required>
-                </label>
-
-                <label for="bsn">Bsn overledene
-                    <input id="bsn" type="text" required>
-                </label>
-                
-                <label for="date">Overlijdensdatum
-                    <input id="date" type="date" required>
-                </label> -->
-                
-
-                <label for="voorletters">Voorletter(s)</label>
-                <input id="voorletters" type="text" required>
 
                 <label for="tussenvoegsel">Tussenvoegsel(s)</label>
-                <input id="tussenvoegsel" type="text" required>
+                <input id="tussenvoegsel" type="text">
 
                 <label for="achternaam">Achternaam</label>
                 <input id="achternaam" type="text" required>
@@ -76,7 +90,7 @@
                 <input id="bsn" type="text" required>
 
                 <label for="date">Overlijdensdatum</label>
-                <input id="date" type="date" required>
+                <input id="date" type="date" required> -->
 
             </fieldset>
 
@@ -106,7 +120,7 @@
                     </div>
             </fieldset>
 
-            <fieldset class="mainFieldset test" >
+            <fieldset class="mainFieldset test hidden" >
                 <legend>
                         Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
                 </legend>
@@ -124,7 +138,7 @@
                 </div>
             </fieldset>
 
-            <fieldset class="mainFieldset test" >
+            <fieldset class="mainFieldset test hidden" >
                 <legend>
                         Hadden de overledene en diens partner een finaal verrekenbeding?
                 </legend>
@@ -142,7 +156,7 @@
                 </div>
             </fieldset>
 
-            <fieldset class="mainFieldset test">
+            <fieldset class="mainFieldset test hidden">
                     <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
                     <input type="date" id="datumHuwelijkseVoorwaarden" name="datumHuwelijkseVoorwaarden">
             </fieldset>
@@ -239,7 +253,7 @@
                     </div>
             </fieldset>
 
-            <fieldset class="mainFieldset test" >
+            <fieldset class="mainFieldset test hidden" >
                 <legend>
                     Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
                 </legend>
@@ -257,7 +271,7 @@
                     </div>
             </fieldset>
 
-            <fieldset class="mainFieldset test" >
+            <fieldset class="mainFieldset test hidden" >
                 <legend>
                     Had dit overleden kind zelf kinderen?
                 </legend>
@@ -275,6 +289,14 @@
                     </div>
             </fieldset>
 
+            <div class="subheading">
+                <h2>
+                Gegevens over testament
+                </h2>
+
+                <hr>
+            </div>
+
             <fieldset class="mainFieldset test" >
                 <legend>
                     Had de overledene een testament?
@@ -291,6 +313,28 @@
                         <input type="radio" id="1c-4-nee" name="testament" value="nee">
                         </div>
                     </div>
+                </div>
+                    
+
+                <label for="protocolNummer">Protocolnummer notaris
+                        <input id="protocolNummer" type="text" pattern="[0-9]{6}" inputmode="numeric" maxlength="6" required>
+                </label>
+
+                <div class="name">
+                    <label for="voorletters">Voorletter(s)
+                        <input id="voorletters" type="text" required>
+                    </label>
+                
+                    <label for="tussenvoegsel">Tussenvoegsel(s)
+                        <input id="tussenvoegsel" type="text">
+                    </label>
+                
+                    <label for="achternaam">Achternaam
+                        <input id="achternaam" type="text" required>
+                    </label>
+                </div>
+
+                <p class="error" id="error-id" aria-live="polite">Dit veld is incorrect</p>
             </fieldset>
 
             
@@ -345,7 +389,7 @@
                 </fieldset>
             </fieldset> -->
   
-            
+            <button type="submit">Verzenden</button>
         </form>
     </section>
 
