@@ -390,6 +390,16 @@ button svg{
 }
 
 /* mediaqueries */
+@media (max-width: 1024px) {
+	.container{
+		max-width: 1024px;
+	}
+
+    section{
+        margin: 1em 10em 4em 10em;
+    }
+}
+
 @media (max-width: 768px) {
 	.container{
 		max-width: 768px;
@@ -427,3 +437,4 @@ button svg{
         font-size: 0.8em;
     }
 }
+
