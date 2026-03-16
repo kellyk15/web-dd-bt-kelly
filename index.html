@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aangifte erfbelasting</title>
 
     <link href="styles/style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png?v=2">
+
+    <!-- v=2 https://claude.ai/chat/cecf5ec5-ee97-4627-b7eb-3ed5d92c6b74 -->
 
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
@@ -23,6 +25,13 @@
     </header>
 
     <section>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li><p>/</p>
+                <li><a href="#">Programma's en formulieren</a></li><p>/</p>
+                <li><a href="#">Aangifte erfbelasting</a></li>
+            </ul>
+        </nav>
         <h1>
             Aangifte erfbelasting
         </h1>
@@ -337,62 +346,301 @@
                 <p class="error" id="error-id" aria-live="polite">Dit veld is incorrect</p>
             </fieldset>
 
-            
-            <!-- <fieldset>
-                <legend>Gegevens van de kinderen</legend>
+            <div class="subheading">
+                <h2>
+                Voor wie doet u geen aangifte?
+                </h2>
 
-                <fieldset>
-                    <legend>
-                        Had de overledene kinderen?
-                    </legend>
-                    <label for="1c-1-ja">Ja</label>
-                    <input type="radio" id="1c-1-ja" name="kinderen" value="ja">
+                <hr>
+            </div>
+
+            <fieldset class="mainFieldset test verkrijgerDeel" >
+                <legend>
+                    Zijn er verkrijgers voor wie u geen aangifte doet?
+                </legend>
+
+                <div class="mainHolder">
+                    <div class="holder">
+                        <label for="3b-1-ja">Ja</label>
+                        <input type="radio" id="3b-1-ja" name="geenAangifte" value="ja">
+                    </div>
+
+                    <div class="holder">
+                        <label for="3b-1-nee">Nee</label>
+                        <input type="radio" id="3b-1-nee" name="geenAangifte" value="nee">
+                        </div>
+                    </div>
+                </div>
                     
-                    <label for="1c-1-nee">Nee</label>
-                    <input type="radio" id="1c-1-nee" name="kinderen" value="nee">
-                </fieldset>
 
-                <fieldset>
+                <!-- verkrijgers -->
+            </fieldset>
+
+                <fieldset class="mainFieldset test verkrijger ">
                     <legend>
-                        Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
+                        Verkrijger 1
                     </legend>
 
-                    <label for="1c-2-ja">Ja</label>
-                    <input type="radio" id="1c-2-ja" name="kinderenOverleden" value="ja"> 
+                    <label for="bsnRsin">Bsn/RSIN
+                        <input id="bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                    </label>
 
-                    <label for="1c-2-nee">Nee</label>
-                    <input type="radio" id="1c-2-nee" name="kinderenOverleden" value="nee">
+                    <div class="name">
+                        <label for="voorletters">Voorletter(s)
+                            <input id="voorletters" type="text" required>
+                        </label>
+                    
+                        <label for="tussenvoegsel">Tussenvoegsel(s)
+                            <input id="tussenvoegsel" type="text">
+                        </label>
+                    
+                        <label for="achternaam">Achternaam
+                            <input id="achternaam" type="text" required>
+                        </label>
+                    </div>
+
+                    <fieldset class="mainFieldset test" >
+                        <legend>
+                            Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?
+                        </legend>
+
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="3b-2-ja">Ja</label>
+
+                                <input type="radio" id="3b-2-ja" name="heleVermogen" value="ja">
+                            </div>
+
+                            <div class="holder">
+                                <label for="3b-2-nee">Nee</label>
+                                    
+                                <input type="radio" id="3b-2-nee" name="heleVermogen" value="nee">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="mainFieldset test" >
+                        <legend>
+                            Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?
+                        </legend>
+
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="3b-3-ja">Ja</label>
+
+                                <input type="radio" id="3b-3-ja" name="legitiemePortie" value="ja">
+                            </div>
+
+                            <div class="holder">
+                                <label for="3b-3-nee">Nee</label>
+                                    
+                                <input type="radio" id="3b-3-nee" name="legitiemePortie" value="nee">
+                            </div>
+                        </div>
+                    </fieldset>
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="mainFieldset test verkrijger">
                     <legend>
-                        Had dit overleden kind zelf kinderen?
+                        Verkrijger 2
                     </legend>
 
-                    <label for="1c-3-ja">Ja</label>
-                    <input type="radio" id="1c-3-ja" name="kleinkinderen" value="ja">
+                    <label for="bsnRsin">Bsn/RSIN
+                        <input id="bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                    </label>
 
-                    <label for="1c-3-nee">Nee</label>
-                    <input type="radio" id="1c-3-nee" name="kleinkinderen" value="nee">
+                    <div class="name">
+                        <label for="voorletters">Voorletter(s)
+                            <input id="voorletters" type="text" required>
+                        </label>
+                    
+                        <label for="tussenvoegsel">Tussenvoegsel(s)
+                            <input id="tussenvoegsel" type="text">
+                        </label>
+                    
+                        <label for="achternaam">Achternaam
+                            <input id="achternaam" type="text" required>
+                        </label>
+                    </div>
+
+                    <fieldset class="mainFieldset test" >
+                        <legend>
+                            Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?
+                        </legend>
+
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="3b-2-ja">Ja</label>
+
+                                <input type="radio" id="3b-2-ja" name="heleVermogen" value="ja">
+                            </div>
+
+                            <div class="holder">
+                                <label for="3b-2-nee">Nee</label>
+                                    
+                                <input type="radio" id="3b-2-nee" name="heleVermogen" value="nee">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="mainFieldset test" >
+                        <legend>
+                            Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?
+                        </legend>
+
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="3b-3-ja">Ja</label>
+
+                                <input type="radio" id="3b-3-ja" name="legitiemePortie" value="ja">
+                            </div>
+
+                            <div class="holder">
+                                <label for="3b-3-nee">Nee</label>
+                                    
+                                <input type="radio" id="3b-3-nee" name="legitiemePortie" value="nee">
+                            </div>
+                        </div>
+                    </fieldset>
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="mainFieldset test verkrijger">
                     <legend>
-                        Had de overledene een testament?
+                        Verkrijger 3
                     </legend>
 
-                    <label for="1c-4-ja">Ja</label>
-                    <input type="radio" id="1c-4-ja" name="testament" value="ja">
+                    <label for="bsnRsin">Bsn/RSIN
+                        <input id="bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                    </label>
 
-                    <label for="1c-4-nee">Nee</label>
-                    <input type="radio" id="1c-4-nee" name="testament" value="nee">
+                    <div class="name">
+                        <label for="voorletters">Voorletter(s)
+                            <input id="voorletters" type="text" required>
+                        </label>
+                    
+                        <label for="tussenvoegsel">Tussenvoegsel(s)
+                            <input id="tussenvoegsel" type="text">
+                        </label>
+                    
+                        <label for="achternaam">Achternaam
+                            <input id="achternaam" type="text" required>
+                        </label>
+                    </div>
+
+                    <fieldset class="mainFieldset test" >
+                        <legend>
+                            Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?
+                        </legend>
+
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="3b-2-ja">Ja</label>
+
+                                <input type="radio" id="3b-2-ja" name="heleVermogen" value="ja">
+                            </div>
+
+                            <div class="holder">
+                                <label for="3b-2-nee">Nee</label>
+                                    
+                                <input type="radio" id="3b-2-nee" name="heleVermogen" value="nee">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="mainFieldset test" >
+                        <legend>
+                            Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?
+                        </legend>
+
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="3b-3-ja">Ja</label>
+
+                                <input type="radio" id="3b-3-ja" name="legitiemePortie" value="ja">
+                            </div>
+
+                            <div class="holder">
+                                <label for="3b-3-nee">Nee</label>
+                                    
+                                <input type="radio" id="3b-3-nee" name="legitiemePortie" value="nee">
+                            </div>
+                        </div>
+                    </fieldset>
                 </fieldset>
-            </fieldset> -->
-  
+
+                <fieldset class="mainFieldset test verkrijger">
+                    <legend>
+                        Verkrijger 4
+                    </legend>
+
+                    <label for="bsnRsin">Bsn/RSIN
+                        <input id="bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                    </label>
+
+                    <div class="name">
+                        <label for="voorletters">Voorletter(s)
+                            <input id="voorletters" type="text" required>
+                        </label>
+                    
+                        <label for="tussenvoegsel">Tussenvoegsel(s)
+                            <input id="tussenvoegsel" type="text">
+                        </label>
+                    
+                        <label for="achternaam">Achternaam
+                            <input id="achternaam" type="text" required>
+                        </label>
+                    </div>
+
+                    <fieldset class="mainFieldset test" >
+                        <legend>
+                            Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?
+                        </legend>
+
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="3b-2-ja">Ja</label>
+
+                                <input type="radio" id="3b-2-ja" name="heleVermogen" value="ja">
+                            </div>
+
+                            <div class="holder">
+                                <label for="3b-2-nee">Nee</label>
+                                    
+                                <input type="radio" id="3b-2-nee" name="heleVermogen" value="nee">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="mainFieldset test" >
+                        <legend>
+                            Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?
+                        </legend>
+
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="3b-3-ja">Ja</label>
+
+                                <input type="radio" id="3b-3-ja" name="legitiemePortie" value="ja">
+                            </div>
+
+                            <div class="holder">
+                                <label for="3b-3-nee">Nee</label>
+                                    
+                                <input type="radio" id="3b-3-nee" name="legitiemePortie" value="nee">
+                            </div>
+                        </div>
+                    </fieldset>
+                </fieldset>
+            
+                <button class="verkrijgerToevoegen hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>Voeg verkrijger toe</button>
+
             <button type="submit">Verzenden</button>
         </form>
     </section>
 
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
