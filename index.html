@@ -376,7 +376,7 @@
                 <!-- verkrijgers -->
             </fieldset>
 
-                <fieldset class="mainFieldset test verkrijger ">
+                <fieldset class="mainFieldset test verkrijger">
                     <legend>
                         Verkrijger 1
                     </legend>
@@ -440,7 +440,7 @@
                     </fieldset>
                 </fieldset>
 
-                <fieldset class="mainFieldset test verkrijger">
+                <fieldset class="mainFieldset test verkrijger verkrijgerHidden">
                     <legend>
                         Verkrijger 2
                     </legend>
@@ -504,7 +504,7 @@
                     </fieldset>
                 </fieldset>
 
-                <fieldset class="mainFieldset test verkrijger">
+                <fieldset class="mainFieldset test verkrijger verkrijgerHidden">
                     <legend>
                         Verkrijger 3
                     </legend>
@@ -568,7 +568,7 @@
                     </fieldset>
                 </fieldset>
 
-                <fieldset class="mainFieldset test verkrijger">
+                <fieldset class="mainFieldset test verkrijger verkrijgerHidden">
                     <legend>
                         Verkrijger 4
                     </legend>
@@ -632,9 +632,13 @@
                     </fieldset>
                 </fieldset>
             
-                <button class="verkrijgerToevoegen hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                </svg>Voeg verkrijger toe</button>
+                <div class="verkrijgerKnoppen">
+                    <button class="verkrijgerToevoegen hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>Voeg verkrijger toe</button>
+    
+                    <button class="verkrijgerVerwijderen hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /> </svg> Verwijder een verkrijger</button>
+                </div>
 
             <button type="submit">Verzenden</button>
         </form>

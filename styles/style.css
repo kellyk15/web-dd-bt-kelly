@@ -341,26 +341,39 @@ button:has(svg):hover{
 button svg{
     width: 1em;
     height: 1.5em;
-    margin-right: 0.5em;
+    margin-right: 0.8em;
 }
 
-/* .js .verkrijgerToevoegen {
+.verkrijgerVerwijderen{
+    background-color: var(--colour-secondary-background);
+}
+
+.verkrijgerVerwijderen:hover{
+    background-color: #c4c4c8;
+}
+
+.verkrijgerKnoppen{
     display: flex;
-    align-items: center;
-} */
+    flex-direction: row;
+    gap: 1em;
+}
+
+.js .verkrijger {
+  display: none;
+}
 
 .mainFieldset:has(input[name="geenAangifte"][value="ja"]:checked) {
     + .mainFieldset.verkrijger {
         display: block;
     }
 
-    ~ button {
+    ~ .verkrijgerKnoppen button {
         display: block;
         display: flex;
         align-items: center;
     }
 }
 
-.js .verkrijger {
-  display: none;
+.js .verkrijger.zichtbaar {
+  display: block;
 }
