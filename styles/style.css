@@ -11,11 +11,11 @@ html{
 
     color-scheme: light dark;
     --colour-background: #FFC917;
-    --colour-secondary-background: #E6E6E9;
-    --colour-grey:#F7F7F9;
-    --colour-text: #003082;
+    --colour-secondary-background: light-dark(#E6E6E9, #252527);
+    --colour-grey:light-dark(#F7F7F9, #252527);
+    --colour-text: light-dark(#003082, #D6D7DC);
     --colour-text-secondary: #0063D3;
-    --colour-secondary: #ffffff;
+    --colour-secondary: light-dark(#ffffff, #252527);
 
     font-family: 'Roboto', sans-serif;
     color: var(--colour-text);
@@ -45,6 +45,10 @@ nav{
     flex-direction: column;
     align-items: center;
     gap: 1em;
+}
+
+nav p{
+    color: #003082;
 }
 
 section{
@@ -142,6 +146,10 @@ fieldset input{
 .holder{
     padding: 0.2em 0;
     width: 100%;
+}
+
+input{
+    background-color: var(--colour-secondary);
 }
 
 .holder input{
@@ -359,7 +367,7 @@ button svg{
   display: none;
 }
 
-.mainFieldset:has(input[name="geenAangifte"][value="ja"]:checked) {
+.js .mainFieldset:has(input[name="geenAangifte"][value="ja"]:checked) {
     + .mainFieldset.verkrijger {
         display: block;
     }
@@ -368,6 +376,12 @@ button svg{
         display: block;
         display: flex;
         align-items: center;
+    }
+}
+
+.no-js .mainFieldset:has(input[name="geenAangifte"][value="ja"]:checked) {
+    ~ .mainFieldset.verkrijger {
+        display: block;
     }
 }
 
@@ -399,5 +413,17 @@ button svg{
 
     .verkrijgerKnoppen{
         gap: 0;
+    }
+
+    h1{
+        font-size: 1.5em;
+    }
+
+    h2{
+        font-size: 1.2em;
+    }
+
+    legend, label, p, .mainFieldset input, .holder label, button {
+        font-size: 0.8em;
     }
 }
