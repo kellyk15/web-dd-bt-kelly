@@ -90,16 +90,13 @@ section:nth-of-type(1) p{
 }
 
 fieldset{
-    /* border: 1px solid var(--colour-text); */
     border: none;
     border-radius: 12px;
-    /* padding: 1.5em; */
     padding: 0;
     margin-bottom: 1em;
 
     display: flex;
     flex-direction: column;
-    /* gap: 1em; */
     background-color: var(--colour-secondary);
     /* filter: drop-shadow(5px 5px 4px var(--colour-secondary-background));  */
 }
@@ -376,4 +373,31 @@ button svg{
 
 .js .verkrijger.zichtbaar {
   display: block;
+}
+
+/* mediaqueries */
+@media (max-width: 768px) {
+	.container{
+		max-width: 768px;
+	}
+
+    section{
+        margin: 1em 2em 4em 2em;
+    }
+
+    .name, ul{
+        flex-wrap: wrap;
+    }
+
+    ul{
+        gap: 0.5em;
+    }
+
+    .mainHolder, .verkrijgerKnoppen{
+        flex-direction: column;
+    }
+
+    .verkrijgerKnoppen{
+        gap: 0;
+    }
 }
