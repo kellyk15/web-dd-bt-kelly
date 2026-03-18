@@ -19,7 +19,10 @@
 <body>
     <header>
         <nav>
-            <img src="images/Logo Nederlandse Spoorwegen.svg" alt="">
+            <label for="colorscheme-btn">
+                <input type="checkbox" name="colorscheme-btn">
+                <img src="images/Logo Nederlandse Spoorwegen.svg" alt="">
+            </label>
             <p>dit is een schoolopdracht</p>
         </nav>
     </header>
@@ -254,21 +257,28 @@
                 </label>
 
                 <div class="name">
-                    <label for="notaris-voorletters">Voorletter(s)
-                        <input id="notaris-voorletters" type="text" required>
-                    </label>
-                    <p class="error" id="error-notaris-voorletters">Vul voorletters in</p>
+                    <div>
+                        <label for="notaris-voorletters">Voorletter(s)
+                            <input id="notaris-voorletters" type="text" required>
+                        </label>
+                        <p class="error" id="error-notaris-voorletters">Vul voorletters in</p>
+                    </div>
                 
-                    <label for="notaris-tussenvoegsel">Tussenvoegsel(s)
-                        <input id="notaris-tussenvoegsel" type="text">
-                    </label>
-                
-                    <label for="notaris-achternaam">Achternaam
-                        <input id="notaris-achternaam" type="text" required>
-                    </label>
+                    <div>
+                        <label for="notaris-tussenvoegsel">Tussenvoegsel(s)
+                            <input id="notaris-tussenvoegsel" type="text">
+                        </label>
+                    </div>
+                    
+                    <div class="achternaam">
+                        <label for="notaris-achternaam">Achternaam
+                            <input id="notaris-achternaam" type="text" required>
+                        </label>
+                        <p class="error" id="error-notaris-achternaam">Vul voorletters in</p>
+                    </div>
                 </div>
 
-                <p class="error" id="error-notaris" aria-live="polite">Dit veld is incorrect</p>
+                <!-- <p class="error" id="error-notaris" aria-live="polite">Dit veld is incorrect</p> -->
             </fieldset>
 
             <div class="subheading">
@@ -307,12 +317,12 @@
                     </legend>
 
                     <label for="verkrijger1-bsnRsin">Bsn/RSIN
-                        <input id="verkrijger1-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                        <input id="verkrijger1-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" >
                     </label>
 
                     <div class="name">
                         <label for="verkrijger1-voorletters">Voorletter(s)
-                            <input id="verkrijger1-voorletters" type="text" required>
+                            <input id="verkrijger1-voorletters" type="text" >
                         </label>
                     
                         <label for="verkrijger1-tussenvoegsel">Tussenvoegsel(s)
@@ -320,7 +330,7 @@
                         </label>
                     
                         <label for="verkrijger1-achternaam">Achternaam
-                            <input id="verkrijger1-achternaam" type="text" required>
+                            <input id="verkrijger1-achternaam" type="text" >
                         </label>
                     </div>
 
@@ -371,12 +381,12 @@
                     </legend>
 
                     <label for="verkrijger2-bsnRsin">Bsn/RSIN
-                        <input id="verkrijger2-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                        <input id="verkrijger2-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" >
                     </label>
 
                     <div class="name">
                         <label for="verkrijger2-voorletters">Voorletter(s)
-                            <input id="verkrijger2-voorletters" type="text" required>
+                            <input id="verkrijger2-voorletters" type="text" >
                         </label>
                     
                         <label for="verkrijger2-tussenvoegsel">Tussenvoegsel(s)
@@ -384,7 +394,7 @@
                         </label>
                     
                         <label for="verkrijger2-achternaam">Achternaam
-                            <input id="verkrijger2-achternaam" type="text" required>
+                            <input id="verkrijger2-achternaam" type="text" >
                         </label>
                     </div>
 
@@ -435,12 +445,12 @@
                     </legend>
 
                     <label for="verkrijger3-bsnRsin">Bsn/RSIN
-                        <input id="verkrijger3-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                        <input id="verkrijger3-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" >
                     </label>
 
                     <div class="name">
                         <label for="verkrijger3-voorletters">Voorletter(s)
-                            <input id="verkrijger3-voorletters" type="text" required>
+                            <input id="verkrijger3-voorletters" type="text" >
                         </label>
                     
                         <label for="verkrijger3-tussenvoegsel">Tussenvoegsel(s)
@@ -448,7 +458,7 @@
                         </label>
                     
                         <label for="verkrijger3-achternaam">Achternaam
-                            <input id="verkrijger3-achternaam" type="text" required>
+                            <input id="verkrijger3-achternaam" type="text">
                         </label>
                     </div>
 
@@ -499,12 +509,12 @@
                     </legend>
 
                     <label for="verkrijger4-bsnRsin">Bsn/RSIN
-                        <input id="verkrijger4-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                        <input id="verkrijger4-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" >
                     </label>
 
                     <div class="name">
                         <label for="verkrijger4-voorletters">Voorletter(s)
-                            <input id="verkrijger4-voorletters" type="text" required>
+                            <input id="verkrijger4-voorletters" type="text">
                         </label>
                     
                         <label for="verkrijger4-tussenvoegsel">Tussenvoegsel(s)
@@ -512,7 +522,7 @@
                         </label>
                     
                         <label for="verkrijger4-achternaam">Achternaam
-                            <input id="verkrijger4-achternaam" type="text" required>
+                            <input id="verkrijger4-achternaam" type="text" >
                         </label>
                     </div>
 

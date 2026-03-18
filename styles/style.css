@@ -470,3 +470,17 @@ button svg{
     }
 }
 
+/* colorscheme button */
+input[type="checkbox"]{
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    aspect-ratio: 1;
+}
+
+html:has(input[name="colorscheme-btn"]:checked) {
+    color-scheme:dark;
+}
+

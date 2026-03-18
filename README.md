@@ -37,6 +37,11 @@ Mixed states bij checkboxes
 
 Ik ga proberen om te werken aan dat de volgende vraag komt op basis van wat je had beantwoord (progressive disclosure)
 
+## Week 2  - wekelijkse reflectie
+Deze week was wel een beetje taai voor mij, want ik wist in het begin niet helemaal waar ik moest beginnen. Voor mij is opstarten vaak wel het probleem en formulieren is voor mij wel een moeilijk ding. Toen ik begon met de styling kwam ik er wel achter dat het makkelijk was voor mij om de motivatie te krijgen om verder te komen. 
+
+Tijdens het voortgang gesprek realiseerde ik me wel dat ik wel wat meer voortgang moest zetten. Vooral qua validatie en de twee patterns. Het zien wat mijn groepje heeft gemaakt gaf mij wel meer inzicht over hoe ik dit kan aanpakken. 
+
 ## Week 3 - maandag 09-03-’26
 
 - Wat heb ik vandaag gedaan?
@@ -78,6 +83,11 @@ Over css nesting
 - Wat ga ik morgen doen?
 
 Nu mijn eerste pattern klaar is ga ik verder met mijn tweede pattern. Ook zou ik meer willen aan de validatie.
+
+## Week 3  - wekelijkse reflectie
+Ik heb deze week veel voortgang gemaakt, dus daar ben ik wel blij mee en het ziet er ook redelijk goed uit. Tijdens het feedback gesprek heb ik nog kleine feedbackpunten gekregen die ik kan verwerken zoals de gele onderlijning en over de progressive disclosure. Ik moet nogsteeds wel veel doen zoals de tweede pattern en er moet meer validatie komen. 
+
+Verder ben ik wel heel blij hoe het mij is gelukt met de progressive disclosure, want ik zat er heel erg mee omdat ik niet wist hoe het zonder javascript moest. Maar het nesten van de css heeft heel erg geholpen hiermee. 
 
 ## Week 4 - maandag 16-03-’26
 
