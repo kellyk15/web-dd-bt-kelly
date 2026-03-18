@@ -16,6 +16,7 @@ html{
     --colour-text: light-dark(#003082, #D6D7DC);
     --colour-text-secondary: #0063D3;
     --colour-secondary: light-dark(#ffffff, #252527);
+    --colour-darkgrey: light-dark(#73747A,#eae4e4);
 
     font-family: 'Roboto', sans-serif;
     color: var(--colour-text);
@@ -110,6 +111,7 @@ fieldset label{
     flex-direction: column;
     gap: 0.5em;
     padding: 0.5em 0;
+    width: 100%;
 }
 
 fieldset input{
@@ -131,12 +133,12 @@ fieldset input{
     width: 100%;
 }
 
-.name label{
+.name div{
     flex-grow: 1;
 }
 
-.name label:nth-child(3){
-    flex-grow: 5;
+.name label:nth-child(3), .name div:nth-child(3) {
+    flex-grow: 12;
 }
 .mainHolder{
     display: flex;
@@ -164,7 +166,7 @@ input{
     border-radius: 8px;
     cursor: pointer;
     display: flex;
-    color: #73747A;
+    color: var(--colour-darkgrey);
 
     font-weight: 200;
     transition: 0.5s;
@@ -224,18 +226,47 @@ hr{
     margin: 5em 0 3em 0;
 }
 
-.error{
-    color: red;
-    display: none;
-}
 
 #datumHuwelijkseVoorwaarden{
     width: 100%;
     cursor: pointer;
 }
 
-fieldset:has(input[id="voorletters"]:user-invalid) .error{
-    display: block;
+input:user-invalid {
+    border: 2px solid red;
+}
+
+input:user-valid {
+    border: 2px solid rgb(0, 255, 64);
+}
+
+.error{
+    color: #BB271A;
+    display: none;
+    font-size: 14px;
+}
+
+fieldset:has(#overledene-voorletters:user-invalid) #error-overledene-voorletters,
+fieldset:has(#overledene-achternaam:user-invalid) #error-overledene-achternaam,
+fieldset:has(#error-ongeldige-bsn:user-invalid)#error-ongeldige-bsn {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-top: -1em;
+    margin-bottom: 1em;
+}
+
+fieldset:has(#overledene-voorletters:user-invalid) #error-overledene-voorletters::before,
+fieldset:has(#overledene-achternaam:user-invalid) #error-overledene-achternaam::before,
+fieldset:has(#error-ongeldige-bsn:user-invalid)#error-ongeldige-bsn::before {
+    content:"";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23BB271A'%3E%3Cpath d='M508.5-291.5Q520-303 520-320t-11.5-28.5Q497-360 480-360t-28.5 11.5Q440-337 440-320t11.5 28.5Q463-280 480-280t28.5-11.5ZM440-440h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/%3E%3C/svg%3E");
+
+    background-size: contain;
 }
 
 .hidden{

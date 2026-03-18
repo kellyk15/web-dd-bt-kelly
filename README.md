@@ -35,4 +35,71 @@ Mixed states bij checkboxes
 
 - Wat ga ik morgen doen?
 
-Ik ga proberen om te werken aan dat de volgende vraag komt op basis van wat je had beantwoord
+Ik ga proberen om te werken aan dat de volgende vraag komt op basis van wat je had beantwoord (progressive disclosure)
+
+## Week 3 - maandag 09-03-’26
+
+- Wat heb ik vandaag gedaan?
+
+Ik ben vandaag niet heel ver gekomen. Ik heb de styling een beetje aangepast zoals bij de input van de naamvelden. Ook heb ik custom validation toegevoegd. 
+
+- Wat heb ik geleerd?
+
+Ik heb geleerd over custom validatie en het was minder moeilijk dan ik dacht. 
+
+- Wat ga ik morgen doen?
+
+Het was eigenlijk mijn plan om vandaag bezig te gaan met de progressive disclosure, maar dat was mij niet gelukt. Ik hoop dus dat ik daar morgen mee aan de slag kan gaan.
+
+<img src="images/read-me/week-3-1.png">
+<img src="images/read-me/week-3-2.png">
+<img src="images/read-me/week-3-3.png">
+
+## Week 3  - dinsdag 10-03-’26
+
+- Wat heb ik vandaag gedaan?
+
+vandaag heb ik gewerkt aan de progressive disclosure en het is mij na een tijdje gelukt om als de eerste vraag eerst ja was en daarna nee dat alle vragen dan ingeklapt worden.  Verder heb ik kleine aanpassingen gedaan aan de styling.
+
+<img src="images/read-me/week-3-4.png">
+<img src="images/read-me/week-3-5.png">
+<img src="images/read-me/week-3-6.png">
+
+Ik heb daarna verder gewerkt aan de gegevens over het testament en probeer daar bezig te gaan met de validatie
+
+- Hoe lang duurde het?
+
+Het duurde mij wel een tijdje, want het lukte mij niet om alle vragen in te laten klappen, maar dit heb ik kunnen fixen door mijn css te nesten.
+
+- Wat heb ik geleerd?
+
+Over css nesting
+
+- Wat ga ik morgen doen?
+
+Nu mijn eerste pattern klaar is ga ik verder met mijn tweede pattern. Ook zou ik meer willen aan de validatie.
+
+## Week 4 - maandag 16-03-’26
+
+- Wat heb ik vandaag gedaan?
+
+Vandaag ben ik aan de slag gegaan met m’n tweede pattern 
+
+- Werkt met en zonder javascript
+- Met javascript - twee buttons (toevoegen en verwijderen)
+- Zonder javascript - staan er 4 verkrijgers, maar klapt nogsteeds wel uit op basis van ja of nee
+
+Responsiveness
+
+- Light and dark mode
+- Oke te zien mobile
+
+<img src="images/read-me/week-4-1.png">
+<img src="images/read-me/week-4-2.png">
+<img src="images/read-me/week-4-3.png">
+
+Kleine styling aanpassingen
+
+- Nav bar toegevoegd
+- Marges en padding
+- Kleurcontrast

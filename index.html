@@ -56,51 +56,41 @@
                 </legend>
 
                 <div class="name">
-                    <label for="voorletters">Voorletter(s)
-                        <input id="voorletters" type="text" required>
-                    </label>
+                    <div>
+                        <label for="overledene-voorletters">Voorletter(s)
+                            <input id="overledene-voorletters" type="text" required>
+                        </label>
+                        <p class="error" id="error-overledene-voorletters">Vul voorletters in</p>
+                    </div>
                 
-                    <label for="tussenvoegsel">Tussenvoegsel(s)
-                        <input id="tussenvoegsel" type="text">
-                    </label>
+                    <div>
+                        <label for="overledene-tussenvoegsel">Tussenvoegsel(s)
+                            <input id="overledene-tussenvoegsel" type="text">
+                        </label>
+                    </div>
                 
-                    <label for="achternaam">Achternaam
-                        <input id="achternaam" type="text" required>
-                    </label>
+                    <div class="achternaam">
+                        <label for="overledene-achternaam">Achternaam
+                            <input id="overledene-achternaam" type="text" required>
+                        </label>
+                        <p class="error" id="error-overledene-achternaam">Vul achternaam in</p>
+                    </div>
                 </div>
-
-                <p class="error" id="error-id" aria-live="polite">Dit veld is incorrect</p>
                 
                 <div class="name">
-                    <label for="bsn">Bsn overledene
-                        <input id="bsn" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
-                    </label>
+                    <div>
+                        <label for="bsn">Bsn overledene
+                            <input id="bsn" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                        </label>
+                        <p class="error" id="error-ongeldige-bsn">Vul een geldig BSN in (8 of 9 cijfers)"</p>
+                    </div>
                 
-                    <label for="date">Overlijdensdatum
-                        <input id="date" type="date" required>
-                    </label>
+                    <div>
+                        <label for="date">Overlijdensdatum
+                            <input id="date" type="date" required>
+                        </label>
+                    </div>
                 </div>
-
-                
-                
-
-                <!-- <label for="voorletters">Voorletter(s)
-                    <input id="voorletters" type="text" required>
-                </label>
-                
-
-                <label for="tussenvoegsel">Tussenvoegsel(s)</label>
-                <input id="tussenvoegsel" type="text">
-
-                <label for="achternaam">Achternaam</label>
-                <input id="achternaam" type="text" required>
-
-                <label for="bsn">Bsn overledene</label>
-                <input id="bsn" type="text" required>
-
-                <label for="date">Overlijdensdatum</label>
-                <input id="date" type="date" required> -->
-
             </fieldset>
 
             <div class="subheading">
@@ -169,72 +159,6 @@
                     <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
                     <input type="date" id="datumHuwelijkseVoorwaarden" name="datumHuwelijkseVoorwaarden">
             </fieldset>
-
-            
-
-            <!-- <fieldset class="mainFieldset">
-                <legend>
-                    Gegevens van de erfgenaam
-                </legend>
-
-                <fieldset class="questionFieldset">
-                    <legend>
-                        Was de overledene getrouwd of had de overledene eengeregistreerde partner op het moment van overlijden?
-                    </legend>
-
-                    <div class="mainHolder">
-                        <div class="holder">
-                            <label for="1b-1-ja">Ja</label>
-                            <input type="radio" id="1b-1-ja" name="getrouwd" value="ja">
-                        </div>
-
-                    <div class="holder">
-                        <label for="1b-1-nee">Nee</label>
-                            <input type="radio" id="1b-1-nee" name="getrouwd" value="nee">
-                        </div>
-                    </div>
-                    
-                    
-                </fieldset>
-
-                <fieldset class="questionFieldset">
-                    <legend>
-                        Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
-                    </legend>
-
-                    <div class="holder">
-                        <label for="1b-2-ja">Ja</label>
-                        <input type="radio" id="1b-2-ja" name="huwelijkseVoorwaarden" value="ja">
-                    </div>
-
-                    <div class="holder">
-                        <label for="1b-2-nee">Nee</label>
-                        <input type="radio" id="1b-2-nee" name="huwelijkseVoorwaarden" value="nee">
-                    </div>
-                </fieldset>
-
-                <fieldset class="questionFieldset">
-                    <legend>
-                        Hadden de overledene en diens partner een finaal verrekenbeding?
-                    </legend>
-
-                    <div class="holder">
-                        <label for="1b-3-ja">Ja</label>
-                        <input type="radio" id="1b-3-ja" name="finaalVerrekenbeding" value="ja">
-                    </div>
-
-                    <div class="holder">
-                        <label for="1b-3-nee">Nee</label>
-                        <input type="radio" id="1b-3-nee" name="finaalVerrekenbeding" value="nee">
-                    </div>
-                </fieldset>
-
-                <fieldset class="questionFieldset">
-                    <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
-                    <input type="date" id="datumHuwelijkseVoorwaarden" name="datumHuwelijkseVoorwaarden">
-                </fieldset>
-            </fieldset> -->
-
 
             <div class="subheading">
                 <h2>
@@ -330,20 +254,21 @@
                 </label>
 
                 <div class="name">
-                    <label for="voorletters">Voorletter(s)
-                        <input id="voorletters" type="text" required>
+                    <label for="notaris-voorletters">Voorletter(s)
+                        <input id="notaris-voorletters" type="text" required>
+                    </label>
+                    <p class="error" id="error-notaris-voorletters">Vul voorletters in</p>
+                
+                    <label for="notaris-tussenvoegsel">Tussenvoegsel(s)
+                        <input id="notaris-tussenvoegsel" type="text">
                     </label>
                 
-                    <label for="tussenvoegsel">Tussenvoegsel(s)
-                        <input id="tussenvoegsel" type="text">
-                    </label>
-                
-                    <label for="achternaam">Achternaam
-                        <input id="achternaam" type="text" required>
+                    <label for="notaris-achternaam">Achternaam
+                        <input id="notaris-achternaam" type="text" required>
                     </label>
                 </div>
 
-                <p class="error" id="error-id" aria-live="polite">Dit veld is incorrect</p>
+                <p class="error" id="error-notaris" aria-live="polite">Dit veld is incorrect</p>
             </fieldset>
 
             <div class="subheading">
@@ -381,21 +306,21 @@
                         Verkrijger 1
                     </legend>
 
-                    <label for="bsnRsin">Bsn/RSIN
-                        <input id="bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                    <label for="verkrijger1-bsnRsin">Bsn/RSIN
+                        <input id="verkrijger1-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
                     </label>
 
                     <div class="name">
-                        <label for="voorletters">Voorletter(s)
-                            <input id="voorletters" type="text" required>
+                        <label for="verkrijger1-voorletters">Voorletter(s)
+                            <input id="verkrijger1-voorletters" type="text" required>
                         </label>
                     
-                        <label for="tussenvoegsel">Tussenvoegsel(s)
-                            <input id="tussenvoegsel" type="text">
+                        <label for="verkrijger1-tussenvoegsel">Tussenvoegsel(s)
+                            <input id="verkrijger1-tussenvoegsel" type="text">
                         </label>
                     
-                        <label for="achternaam">Achternaam
-                            <input id="achternaam" type="text" required>
+                        <label for="verkrijger1-achternaam">Achternaam
+                            <input id="verkrijger1-achternaam" type="text" required>
                         </label>
                     </div>
 
@@ -406,15 +331,15 @@
 
                         <div class="mainHolder">
                             <div class="holder">
-                                <label for="3b-2-ja">Ja</label>
+                                <label for="verkrijger1-heleVermogen-ja">Ja</label>
 
-                                <input type="radio" id="3b-2-ja" name="heleVermogen" value="ja">
+                                <input type="radio" id="verkrijger1-heleVermogen-ja" name="verkrijger1-heleVermogen" value="ja">
                             </div>
 
                             <div class="holder">
-                                <label for="3b-2-nee">Nee</label>
+                                <label for="verkrijger1-heleVermogen-nee">Nee</label>
                                     
-                                <input type="radio" id="3b-2-nee" name="heleVermogen" value="nee">
+                                <input type="radio" id="verkrijger1-heleVermogen-nee" name="verkrijger1-heleVermogen" value="nee">
                             </div>
                         </div>
                     </fieldset>
@@ -426,15 +351,15 @@
 
                         <div class="mainHolder">
                             <div class="holder">
-                                <label for="3b-3-ja">Ja</label>
+                                <label for="verkrijger1-legitiemePortie-ja">Ja</label>
 
-                                <input type="radio" id="3b-3-ja" name="legitiemePortie" value="ja">
+                                <input type="radio" id="verkrijger1-legitiemePortie-ja" name="verkrijger1-legitiemePortie" value="ja">
                             </div>
 
                             <div class="holder">
-                                <label for="3b-3-nee">Nee</label>
+                                <label for="verkrijger1-legitiemePortie-nee">Nee</label>
                                     
-                                <input type="radio" id="3b-3-nee" name="legitiemePortie" value="nee">
+                                <input type="radio" id="verkrijger1-legitiemePortie-nee" name="verkrijger1-legitiemePortie" value="nee">
                             </div>
                         </div>
                     </fieldset>
@@ -445,21 +370,21 @@
                         Verkrijger 2
                     </legend>
 
-                    <label for="bsnRsin">Bsn/RSIN
-                        <input id="bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                    <label for="verkrijger2-bsnRsin">Bsn/RSIN
+                        <input id="verkrijger2-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
                     </label>
 
                     <div class="name">
-                        <label for="voorletters">Voorletter(s)
-                            <input id="voorletters" type="text" required>
+                        <label for="verkrijger2-voorletters">Voorletter(s)
+                            <input id="verkrijger2-voorletters" type="text" required>
                         </label>
                     
-                        <label for="tussenvoegsel">Tussenvoegsel(s)
-                            <input id="tussenvoegsel" type="text">
+                        <label for="verkrijger2-tussenvoegsel">Tussenvoegsel(s)
+                            <input id="verkrijger2-tussenvoegsel" type="text">
                         </label>
                     
-                        <label for="achternaam">Achternaam
-                            <input id="achternaam" type="text" required>
+                        <label for="verkrijger2-achternaam">Achternaam
+                            <input id="verkrijger2-achternaam" type="text" required>
                         </label>
                     </div>
 
@@ -470,15 +395,15 @@
 
                         <div class="mainHolder">
                             <div class="holder">
-                                <label for="3b-2-ja">Ja</label>
+                                <label for="verkrijger2-heleVermogen-ja">Ja</label>
 
-                                <input type="radio" id="3b-2-ja" name="heleVermogen" value="ja">
+                                <input type="radio" id="verkrijger2-heleVermogen-ja" name="verkrijger2-heleVermogen" value="ja">
                             </div>
 
                             <div class="holder">
-                                <label for="3b-2-nee">Nee</label>
+                                <label for="verkrijger2-heleVermogen-nee">Nee</label>
                                     
-                                <input type="radio" id="3b-2-nee" name="heleVermogen" value="nee">
+                                <input type="radio" id="verkrijger2-heleVermogen-nee" name="verkrijger2-heleVermogen" value="nee">
                             </div>
                         </div>
                     </fieldset>
@@ -490,15 +415,15 @@
 
                         <div class="mainHolder">
                             <div class="holder">
-                                <label for="3b-3-ja">Ja</label>
+                                <label for="verkrijger2-legitiemePortie-ja">Ja</label>
 
-                                <input type="radio" id="3b-3-ja" name="legitiemePortie" value="ja">
+                                <input type="radio" id="verkrijger2-legitiemePortie-ja" name="verkrijger2-legitiemePortie" value="ja">
                             </div>
 
                             <div class="holder">
-                                <label for="3b-3-nee">Nee</label>
+                                <label for="verkrijger2-legitiemePortie-nee">Nee</label>
                                     
-                                <input type="radio" id="3b-3-nee" name="legitiemePortie" value="nee">
+                                <input type="radio" id="verkrijger2-legitiemePortie-nee" name="verkrijger2-legitiemePortie" value="nee">
                             </div>
                         </div>
                     </fieldset>
@@ -509,21 +434,21 @@
                         Verkrijger 3
                     </legend>
 
-                    <label for="bsnRsin">Bsn/RSIN
-                        <input id="bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                    <label for="verkrijger3-bsnRsin">Bsn/RSIN
+                        <input id="verkrijger3-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
                     </label>
 
                     <div class="name">
-                        <label for="voorletters">Voorletter(s)
-                            <input id="voorletters" type="text" required>
+                        <label for="verkrijger3-voorletters">Voorletter(s)
+                            <input id="verkrijger3-voorletters" type="text" required>
                         </label>
                     
-                        <label for="tussenvoegsel">Tussenvoegsel(s)
-                            <input id="tussenvoegsel" type="text">
+                        <label for="verkrijger3-tussenvoegsel">Tussenvoegsel(s)
+                            <input id="verkrijger3-tussenvoegsel" type="text">
                         </label>
                     
-                        <label for="achternaam">Achternaam
-                            <input id="achternaam" type="text" required>
+                        <label for="verkrijger3-achternaam">Achternaam
+                            <input id="verkrijger3-achternaam" type="text" required>
                         </label>
                     </div>
 
@@ -534,15 +459,15 @@
 
                         <div class="mainHolder">
                             <div class="holder">
-                                <label for="3b-2-ja">Ja</label>
+                                <label for="verkrijger3-heleVermogen-ja">Ja</label>
 
-                                <input type="radio" id="3b-2-ja" name="heleVermogen" value="ja">
+                                <input type="radio" id="verkrijger3-heleVermogen-ja" name="verkrijger3-heleVermogen" value="ja">
                             </div>
 
                             <div class="holder">
-                                <label for="3b-2-nee">Nee</label>
+                                <label for="verkrijger3-heleVermogen-nee">Nee</label>
                                     
-                                <input type="radio" id="3b-2-nee" name="heleVermogen" value="nee">
+                                <input type="radio" id="verkrijger3-heleVermogen-nee" name="verkrijger3-heleVermogen" value="nee">
                             </div>
                         </div>
                     </fieldset>
@@ -554,15 +479,15 @@
 
                         <div class="mainHolder">
                             <div class="holder">
-                                <label for="3b-3-ja">Ja</label>
+                                <label for="verkrijger3-legitiemePortie-ja">Ja</label>
 
-                                <input type="radio" id="3b-3-ja" name="legitiemePortie" value="ja">
+                                <input type="radio" id="verkrijger3-legitiemePortie-ja" name="verkrijger3-legitiemePortie" value="ja">
                             </div>
 
                             <div class="holder">
-                                <label for="3b-3-nee">Nee</label>
+                                <label for="verkrijger3-legitiemePortie-nee">Nee</label>
                                     
-                                <input type="radio" id="3b-3-nee" name="legitiemePortie" value="nee">
+                                <input type="radio" id="verkrijger3-legitiemePortie-nee" name="verkrijger3-legitiemePortie" value="nee">
                             </div>
                         </div>
                     </fieldset>
@@ -573,21 +498,21 @@
                         Verkrijger 4
                     </legend>
 
-                    <label for="bsnRsin">Bsn/RSIN
-                        <input id="bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                    <label for="verkrijger4-bsnRsin">Bsn/RSIN
+                        <input id="verkrijger4-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
                     </label>
 
                     <div class="name">
-                        <label for="voorletters">Voorletter(s)
-                            <input id="voorletters" type="text" required>
+                        <label for="verkrijger4-voorletters">Voorletter(s)
+                            <input id="verkrijger4-voorletters" type="text" required>
                         </label>
                     
-                        <label for="tussenvoegsel">Tussenvoegsel(s)
-                            <input id="tussenvoegsel" type="text">
+                        <label for="verkrijger4-tussenvoegsel">Tussenvoegsel(s)
+                            <input id="verkrijger4-tussenvoegsel" type="text">
                         </label>
                     
-                        <label for="achternaam">Achternaam
-                            <input id="achternaam" type="text" required>
+                        <label for="verkrijger4-achternaam">Achternaam
+                            <input id="verkrijger4-achternaam" type="text" required>
                         </label>
                     </div>
 
@@ -598,15 +523,15 @@
 
                         <div class="mainHolder">
                             <div class="holder">
-                                <label for="3b-2-ja">Ja</label>
+                                <label for="verkrijger4-heleVermogen-ja">Ja</label>
 
-                                <input type="radio" id="3b-2-ja" name="heleVermogen" value="ja">
+                                <input type="radio" id="verkrijger4-heleVermogen-ja" name="verkrijger4-heleVermogen" value="ja">
                             </div>
 
                             <div class="holder">
-                                <label for="3b-2-nee">Nee</label>
+                                <label for="verkrijger4-heleVermogen-nee">Nee</label>
                                     
-                                <input type="radio" id="3b-2-nee" name="heleVermogen" value="nee">
+                                <input type="radio" id="verkrijger4-heleVermogen-nee" name="verkrijger4-heleVermogen" value="nee">
                             </div>
                         </div>
                     </fieldset>
@@ -618,15 +543,15 @@
 
                         <div class="mainHolder">
                             <div class="holder">
-                                <label for="3b-3-ja">Ja</label>
+                                <label for="verkrijger4-legitiemePortie-ja">Ja</label>
 
-                                <input type="radio" id="3b-3-ja" name="legitiemePortie" value="ja">
+                                <input type="radio" id="verkrijger4-legitiemePortie-ja" name="verkrijger4-legitiemePortie" value="ja">
                             </div>
 
                             <div class="holder">
-                                <label for="3b-3-nee">Nee</label>
+                                <label for="verkrijger4-legitiemePortie-nee">Nee</label>
                                     
-                                <input type="radio" id="3b-3-nee" name="legitiemePortie" value="nee">
+                                <input type="radio" id="verkrijger4-legitiemePortie-nee" name="verkrijger4-legitiemePortie" value="nee">
                             </div>
                         </div>
                     </fieldset>
@@ -646,5 +571,4 @@
 
     <script src="scripts/script.js"></script>
 </body>
-
 </html>
