@@ -248,7 +248,7 @@ input:user-valid {
 
 fieldset:has(#overledene-voorletters:user-invalid) #error-overledene-voorletters,
 fieldset:has(#overledene-achternaam:user-invalid) #error-overledene-achternaam,
-fieldset:has(#error-ongeldige-bsn:user-invalid)#error-ongeldige-bsn {
+fieldset:has(#bsn:user-invalid) #error-ongeldige-bsn{
     display: flex;
     align-items: center;
     gap: 0.4em;
@@ -258,7 +258,7 @@ fieldset:has(#error-ongeldige-bsn:user-invalid)#error-ongeldige-bsn {
 
 fieldset:has(#overledene-voorletters:user-invalid) #error-overledene-voorletters::before,
 fieldset:has(#overledene-achternaam:user-invalid) #error-overledene-achternaam::before,
-fieldset:has(#error-ongeldige-bsn:user-invalid)#error-ongeldige-bsn::before {
+fieldset:has(#bsn:user-invalid) #error-ongeldige-bsn::before {
     content:"";
     display: inline-block;
     width: 20px;
@@ -480,7 +480,30 @@ input[type="checkbox"]{
     aspect-ratio: 1;
 }
 
+nav label{
+    position: relative;
+}
+
 html:has(input[name="colorscheme-btn"]:checked) {
     color-scheme:dark;
 }
 
+/* animation */
+fieldset, legend{
+    animation-name: appear;
+    animation-timeline: view();
+    animation-range: normal 25%;
+    animation-fill-mode: both;
+}
+
+@keyframes appear{
+	0%{
+		opacity: 0%;
+		scale: 0.5;
+	}
+	
+	100%{
+		opacity: 1;
+		scale: 1;
+	}
+}
