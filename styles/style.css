@@ -246,7 +246,7 @@ input:user-valid {
     font-size: 14px;
 }
 
-fieldset:has(#overledene-voorletters:user-invalid) #error-overledene-voorletters,
+label:has(#overledene-voorletters) + .error,
 fieldset:has(#overledene-achternaam:user-invalid) #error-overledene-achternaam,
 fieldset:has(#bsn:user-invalid) #error-ongeldige-bsn{
     display: flex;
@@ -256,6 +256,8 @@ fieldset:has(#bsn:user-invalid) #error-ongeldige-bsn{
     margin-bottom: 1em;
 }
 
+
+/* dit moet anders */
 fieldset:has(#overledene-voorletters:user-invalid) #error-overledene-voorletters::before,
 fieldset:has(#overledene-achternaam:user-invalid) #error-overledene-achternaam::before,
 fieldset:has(#bsn:user-invalid) #error-ongeldige-bsn::before {
