@@ -151,14 +151,32 @@ Verder werkt de validatie nog niet helemaal goed zoals er in de screenshot te zi
 <img src ="images/read-me/read-me-06.png">
 
 - javascript validatie
-- javascript voegt required toe aan verkrijgers als ze toegevoegd worden
+
+<img src ="images/read-me/read-me-08.png">
+
+- javascript voegt required toe aan verkrijgers als ze toegevoegd worden & individueel te verwijderen
+
+<img src ="images/read-me/read-me-07.png">
+
 - local storage en een reset button 
 - styling verbeterd
 - light en dark mode
 - aria-invalid true en aria describeby toegevoegd
 
 
-## bronnen
+## Reflectie
+Dit was echt een hele uitdagende opdracht voor mij. Ik had nog nooit eerder gewerkt met validatie, dus in het begin was ik erg verward en snapte ik niet goed hoe ik het moest aanpakken. Uiteindelijk heb ik wel veel geleerd over validatie, vooral met HTML/CSS en toegankelijkheid. Dingen zoals aria-describedby, aria-live, aria-invalid, :user-invalid en pattern waren helemaal nieuw voor mij. Javascript-validatie vind ik nog steeds lastig en ik twijfel soms of ik het op de juiste manier heb toegepast, maar ik merk wel dat ik er veel meer van begrijp dan aan het begin van dit project.
+
+Tijdens dit project heb ik ook gewerkt aan progressive disclosure. Dat vond ik in het begin erg moeilijk, vooral omdat het ook zonder Javascript moest werken. Uiteindelijk is het mij gelukt om vragen uit en in te klappen op basis van eerdere antwoorden. Ik was daar wel trots op, omdat ik hier eerst echt op vastliep. Ook het individueel toevoegen en verwijderen van verkrijgers met Javascript was iets waar ik veel van heb geleerd.
+
+Gelukkig heb ik bij het vak API localstorage geleerd en heb ik dat ook een beetje kunnen verwerken voor dit project alhoewel het toch net wat anders was.
+
+Ik heb toelichtingen gewerkt met iets nieuws voor mij en dat was  <details>en summary</details>
+
+Wat ik vooral heb geleerd, is dat formulieren maken veel moeilijker is dan ik van tevoren dacht. Er komt veel meer kijken bij gebruiksvriendelijkheid, validatie en toegankelijkheid dan alleen “een paar inputs neerzetten”. Ik heb tijdens deze opdracht vaak getwijfeld over mijn aanpak, maar ik denk dat ik het uiteindelijk goed heb aangepakt. Voor een volgende keer weet ik in ieder geval dat ik formulieren en validatie niet meer moet onderschatten.
+
+
+## Bronnen
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/fieldset
 - https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors
 
