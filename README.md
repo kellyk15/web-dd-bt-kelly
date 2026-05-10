@@ -1,58 +1,66 @@
-# web-dd-bt-kelly
+# Browser Tech
+Voor deze schoolopdracht moet ik een formulier maken voor erfbelasting in de stijl van NS door middel van HTML en CSS, maar natuurlijk ook Javascript om het nog beter te maken. Dit formulier moet wel bruikbaar zijn zonder Javascript. Ook moet er een duidelijk focus zijn op usability en accessibility.
 
-## Week 2  - maandag 2 maart
-- Wat heb ik vandaag gedaan?
+## Week 2 | 02-03-2026 maandag
+### Wat heb ik vandaag gedaan?
 
 ik ben vandaag begonnen aan de opdracht en het was nog vooral inkomen voor mij dus hierdoor heb ik niet heel veel kunnen doen. Het was vooral nog oriënteren en artikelen lezen over forms, maar ik heb al een beginnetje aan de html gemaakt.
 
 Verder had ik nog de workshop van vasilis gevolgd in de ochtend over validatie
 
+<img src = "images/read-me/read-me.png">
 
-- Wat heb ik geleerd?
+
+### Wat heb ik geleerd?
 
 Ik heb wat geleerd over valideren met html/css en ook nog over fieldset
 
-- Wat ga ik morgen doen?
+### Wat ga ik morgen doen?
 
-ik ga voor nu alleen nog focussen op de eerste, dus dan ga ik morgen ook een begin maken aan de styling hierdoor kan ik een beter beeld krijgen over hoe het eruit ziet. verder wil ik werken aan het uitklappen bij de uitsluitende vragen.
+ik ga voor nu alleen nog focussen op de eerste pattern, dus dan ga ik morgen ook een begin maken aan de styling hierdoor kan ik een beter beeld krijgen over hoe het eruit ziet. Verder wil ik werken aan het uitklappen bij de uitsluitende vragen.
 
-## Week 2  - dinsdag 3 maart 
-- Wat heb ik vandaag gedaan?
+## Week 2 | 03-03-2026 dinsdag
+### Wat heb ik vandaag gedaan?
 
 Vandaag hadden we eerst aan de weekly geek gezeten en ben ik gelijk daarna de rest van de vragen in de html gaan zetten. Daarna heb ik gezeten aan de css en heb ik de workshop van Victor gevolgd over valideren. 
+
 
 De rest van de dag ben ik verder gaan werken aan de css van mn site.
 
 <img src="images/read-me/week-2.png">
 
-- Hoe lang duurde het?
+### Hoe lang duurde het?
 
 Het werken aan de css duurde mij wel een tijdje, omdat ik in het begin even niet wist hoe ik het moest aanpakken. Daarna heb ik mijn html een beetje moeten fixen zodat ik het beter kon stylen. Ook was ik de hele tijd niet tevreden. 
 
-- Wat heb ik geleerd?
+### Wat heb ik geleerd?
 
 Mixed states bij checkboxes
 
-- Wat ga ik morgen doen?
+### Wat ga ik morgen doen?
 
 Ik ga proberen om te werken aan dat de volgende vraag komt op basis van wat je had beantwoord (progressive disclosure)
 
-## Week 2  - wekelijkse reflectie
+## Week 2 | wekelijkse reflectie
 Deze week was wel een beetje taai voor mij, want ik wist in het begin niet helemaal waar ik moest beginnen. Voor mij is opstarten vaak wel het probleem en formulieren is voor mij wel een moeilijk ding. Toen ik begon met de styling kwam ik er wel achter dat het makkelijk was voor mij om de motivatie te krijgen om verder te komen. 
 
 Tijdens het voortgang gesprek realiseerde ik me wel dat ik wel wat meer voortgang moest zetten. Vooral qua validatie en de twee patterns. Het zien wat mijn groepje heeft gemaakt gaf mij wel meer inzicht over hoe ik dit kan aanpakken. 
 
-## Week 3 - maandag 09-03-’26
+## Week 3 | 09-03-2026 maandag
+<img src="images/read-me/read-me-03.png">
 
-- Wat heb ik vandaag gedaan?
+### Wat heb ik vandaag gedaan?
 
 Ik ben vandaag niet heel ver gekomen. Ik heb de styling een beetje aangepast zoals bij de input van de naamvelden. Ook heb ik custom validation toegevoegd. 
 
-- Wat heb ik geleerd?
+### Wat heb ik geleerd?
 
-Ik heb geleerd over custom validatie en het was minder moeilijk dan ik dacht. 
+Ik heb geleerd over custom validatie in javascript bij de workshop van Victor. 
+https://codepen.io/kellyhk/pen/raMmpbN
 
-- Wat ga ik morgen doen?
+Dit ging over user-invalid en aria-live="polite" en describeby
+
+### Wat ga ik morgen doen?
 
 Het was eigenlijk mijn plan om vandaag bezig te gaan met de progressive disclosure, maar dat was mij niet gelukt. Ik hoop dus dat ik daar morgen mee aan de slag kan gaan.
 
@@ -60,11 +68,11 @@ Het was eigenlijk mijn plan om vandaag bezig te gaan met de progressive disclosu
 <img src="images/read-me/week-3-2.png">
 <img src="images/read-me/week-3-3.png">
 
-## Week 3  - dinsdag 10-03-’26
+## Week 3 | 10-03-2026 dinsdag
 
-- Wat heb ik vandaag gedaan?
+### Wat heb ik vandaag gedaan?
 
-vandaag heb ik gewerkt aan de progressive disclosure en het is mij na een tijdje gelukt om als de eerste vraag eerst ja was en daarna nee dat alle vragen dan ingeklapt worden.  Verder heb ik kleine aanpassingen gedaan aan de styling.
+Vandaag heb ik gewerkt aan de progressive disclosure en het is mij na een tijdje gelukt om als de eerste vraag eerst ja was en daarna nee dat alle vragen dan ingeklapt worden.  Verder heb ik kleine aanpassingen gedaan aan de styling.
 
 <img src="images/read-me/week-3-4.png">
 <img src="images/read-me/week-3-5.png">
@@ -72,26 +80,25 @@ vandaag heb ik gewerkt aan de progressive disclosure en het is mij na een tijdje
 
 Ik heb daarna verder gewerkt aan de gegevens over het testament en probeer daar bezig te gaan met de validatie
 
-- Hoe lang duurde het?
+### Hoe lang duurde het?
 
 Het duurde mij wel een tijdje, want het lukte mij niet om alle vragen in te laten klappen, maar dit heb ik kunnen fixen door mijn css te nesten.
 
-- Wat heb ik geleerd?
+### Wat heb ik geleerd?
 
-Over css nesting
+Ik heb vandaag geleerd over CSS nesting
 
-- Wat ga ik morgen doen?
+### Wat ga ik morgen doen?
 
 Nu mijn eerste pattern klaar is ga ik verder met mijn tweede pattern. Ook zou ik meer willen aan de validatie.
 
-## Week 3  - wekelijkse reflectie
+## Week 3  | wekelijkse reflectie
 Ik heb deze week veel voortgang gemaakt, dus daar ben ik wel blij mee en het ziet er ook redelijk goed uit. Tijdens het feedback gesprek heb ik nog kleine feedbackpunten gekregen die ik kan verwerken zoals de gele onderlijning en over de progressive disclosure. Ik moet nogsteeds wel veel doen zoals de tweede pattern en er moet meer validatie komen. 
 
 Verder ben ik wel heel blij hoe het mij is gelukt met de progressive disclosure, want ik zat er heel erg mee omdat ik niet wist hoe het zonder javascript moest. Maar het nesten van de css heeft heel erg geholpen hiermee. 
 
-## Week 4 - maandag 16-03-’26
-
-- Wat heb ik vandaag gedaan?
+## Week 4 | 16-03-2026 maandag
+### Wat heb ik vandaag gedaan?
 
 Vandaag ben ik aan de slag gegaan met m’n tweede pattern 
 
@@ -113,3 +120,32 @@ Kleine styling aanpassingen
 - Nav bar toegevoegd
 - Marges en padding
 - Kleurcontrast
+
+## Week 4 | 20-03-2026 vrijdag gesprek + reflectie
+Vandaag had ik met Victor over mijn site en dit zijn een aantal feedbackpunten die ik nog moet verwerken voor de herkansing.
+
+- Validatie goed erin
+- Progressive disclosure validatie erin
+- Toevoegen van verkrijgers op de juiste manier (met juiste validatie)
+- Kijk eens naar scrollInToView() <- javascript
+- Dark/light mode switch?
+
+Dit was een korte week en heb ik vooral gezeten aan het responsive maken van de site aangezien het op mobiel nog niet te zien was en heb ik ook een darkmode gemaakt ervoor. Ik heb deze week ook gewerkt aan mijn tweede pattern, maar na het gesprek bleek dat mijn tweede pattern niet voldoende was zoals je kan wel verkrijgers toevoegen en verwijderen maar niet bijvoorbeeld verkrijger 2 als je er 3 hebt, dus dan zou je nummer 3 ook moeten verwijderen.
+
+<img src ="images/read-me/read-me-04.png">
+
+Verder werkt de validatie nog niet helemaal goed zoals er in de screenshot te zien is. Alhoewel de styling van de site al prima is werkt de flow toch niet helemaal goed en dat is iets waar ik beter over na moet denken. Ik vind het toch wel lastig om javascript validatie te doen, maar ik ga voor de herkansing proberen om dat meer te verwerken.
+
+
+## Waar heb ik aan gewerkt sinds de herkansing?
+- Met javascript de verborgen buttons zijn nu disabled als ze verborgen zijn, dus ze worden dan niet meegestuurd & geldt ook de voor de verkrijgers
+- Verkrijgers zijn nu met de javascript individueel verborgen
+- Focus op de radio buttons door ze niet op display:none te zetten maar positon absolute en width en height 0, maar wel een focus state toevoegen.
+- Het is niet mogelijk om de hidden radio buttons alleen required te maken zonder javascript. Ik heb het geprobeerd met hidden class en html hidden atrribute. Dit is iets dat ik wel ga doen als er wel javascript is voor de progressive enhanchement.
+
+- gegevens testament klapt nu ook in en uit op basis van antwoord
+- alleen mogelijk om letters in te typen bij voorletters en achternaam anders geeft het een error
+- toelichting bij vragen door middel van details summary
+
+<img src ="images/read-me/read-me-05.png">
+<img src ="images/read-me/read-me-06.png">

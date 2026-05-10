@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aangifte erfbelasting</title>
 
     <link href="styles/style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png?v=3">
 
     <!-- v=2 https://claude.ai/chat/cecf5ec5-ee97-4627-b7eb-3ed5d92c6b74 -->
 
@@ -17,7 +17,13 @@
 
 
 <body>
+    <!-- header en introductie -->
     <header>
+        <label for="colorscheme-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+            </svg>
+        </label>
         <nav>
             <label for="colorscheme-btn">
                 <input type="checkbox" name="colorscheme-btn">
@@ -25,6 +31,14 @@
             </label>
             <p>dit is een schoolopdracht</p>
         </nav>
+
+        <label for="colorscheme-btn">
+            <input type="checkbox" name="colorscheme-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                </svg>
+        </label>
+
     </header>
 
     <section>
@@ -40,260 +54,430 @@
         </h1>
         <p>
             Met dit formulier doet u aangifte erfbelasting voor een overlijden in 2025 voor alle personen en instellingen die iets krijgen uit de nalatenschap. 
+            
+            Het volledige invullen van het formulier zal ongeveer 5-10 minuten duren. <br> <br>
+
+            Zorg ervoor dat je volgende gegevens bij de hand hebt: <br>
+
+            - BSN van de overledene <br>
+            - Gegevens van de verkrijgers <br>
+            Uw gegevens worden alleen gebruikt voor de Aangifte Erfbelasting.
         </p>
-        <!-- <hr> -->
     </section>
 
+    <!-- form deel 1 -->
     <section>
-        <!-- <form action= "." method="get"> -->
-        <form action="bevestiging.html">
+        <form action="/bevestiging.html" method="get">
             <div class="subheading">
                 <h2>
                     Gegevens van de overledene
-                </h2> <hr>
+                </h2> 
+                <hr>
             </div>
             
-            <fieldset class="mainFieldset">
-                <legend>
-                    Gegevens van de overledene
-                </legend>
+            <div class="wrapper">
+                <fieldset class="mainFieldset">
+                    <legend>
+                        Gegevens van de overledene
+                    </legend>
 
-                <div class="name">
-                    <div>
-                        <label for="overledene-voorletters">Voorletter(s)
-                            <input id="overledene-voorletters" type="text" required>
-                            <!-- error met span -->
-                        </label>
-                        <p class="error" id="error-overledene-voorletters">Vul voorletters in</p>
-                    </div>
-                
-                    <div>
-                        <label for="overledene-tussenvoegsel">Tussenvoegsel(s)
-                            <input id="overledene-tussenvoegsel" type="text">
-                        </label>
-                    </div>
-                
-                    <div class="achternaam">
-                        <label for="overledene-achternaam">Achternaam
-                            <input id="overledene-achternaam" type="text" required>
-                        </label>
-                        <p class="error" id="error-overledene-achternaam">Vul achternaam in</p>
-                    </div>
-                </div>
-                
-                <div class="name">
-                    <div>
-                        <label for="bsn">Bsn overledene
-                            <input id="bsn" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
-                        </label>
-                        <p class="error" id="error-ongeldige-bsn">Vul een geldig BSN in (8 of 9 cijfers)</p>
-                    </div>
-                
-                    <div>
-                        <label for="date">Overlijdensdatum
-                            <input id="date" type="date" required>
-                        </label>
-                    </div>
-                </div>
-            </fieldset>
-
-            <div class="subheading">
-                <h2>
-                Gegevens van de erfgenaam
-                </h2>
-
-                <hr>
-            </div>
-
-            <fieldset class="mainFieldset test" >
-                <legend>
-                        Was de overledene getrouwd of had de overledene eengeregistreerde partner op het moment van overlijden?
-                </legend>
-
-                <div class="mainHolder">
-                        <div class="holder">
-                            <label for="1b-1-ja">Ja</label>
-                            <input type="radio" id="1b-1-ja" name="getrouwd" value="ja">
+                    <div class="name">
+                        <div>
+                            <label for="overledene-voorletters">Voorletter(s)
+                                <input id="overledene-voorletters" type="text" required pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                <!-- error met span -->
+                            </label>
+                            <p class="error" id="error-overledene-voorletters">Vul voorletters in</p>
                         </div>
-
-                    <div class="holder">
-                        <label for="1b-1-nee">Nee</label>
-                            <input type="radio" id="1b-1-nee" name="getrouwd" value="nee">
-                        </div>
-                    </div>
-            </fieldset>
-
-            <fieldset class="mainFieldset test hidden" >
-                <legend>
-                        Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
-                </legend>
-
-                <div class="mainHolder">
-                    <div class="holder">
-                        <label for="1b-2-ja">Ja</label>
-                        <input type="radio" id="1b-2-ja" name="huwelijkseVoorwaarden" value="ja">
-                    </div>
-
-                    <div class="holder">
-                        <label for="1b-2-nee">Nee</label>
-                        <input type="radio" id="1b-2-nee" name="huwelijkseVoorwaarden" value="nee">
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset class="mainFieldset test hidden" >
-                <legend>
-                        Hadden de overledene en diens partner een finaal verrekenbeding?
-                </legend>
-
-                <div class="mainHolder">
-                    <div class="holder">
-                        <label for="1b-3-ja">Ja</label>
-                        <input type="radio" id="1b-3-ja" name="finaalVerrekenbeding" value="ja">
-                    </div>
-
-                    <div class="holder">
-                        <label for="1b-3-nee">Nee</label>
-                        <input type="radio" id="1b-3-nee" name="finaalVerrekenbeding" value="nee">
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset class="mainFieldset test hidden">
-                    <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
-                    <input type="date" id="datumHuwelijkseVoorwaarden" name="datumHuwelijkseVoorwaarden">
-            </fieldset>
-
-            <div class="subheading">
-                <h2>
-                Gegevens van de kinderen
-                </h2>
-
-                <hr>
-            </div>
-
-            <fieldset class="mainFieldset test" >
-                <legend>
-                    Had de overledene kinderen?
-                </legend>
-
-                <div class="mainHolder">
-                        <div class="holder">
-                            <label for="1c-1-ja">Ja</label>
-                        <input type="radio" id="1c-1-ja" name="kinderen" value="ja">
-                        </div>
-
-                    <div class="holder">
-                        <label for="1c-1-nee">Nee</label>
-                            <input type="radio" id="1c-1-nee" name="kinderen" value="nee">
-                        </div>
-                    </div>
-            </fieldset>
-
-            <fieldset class="mainFieldset test hidden" >
-                <legend>
-                    Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
-                </legend>
-
-                <div class="mainHolder">
-                    <div class="holder">
-                        <label for="1c-2-ja">Ja</label>
-                        <input type="radio" id="1c-2-ja" name="kinderenOverleden" value="ja"> 
-                    </div>
-
-                    <div class="holder">
-                        <label for="1c-2-nee">Nee</label>
-                        <input type="radio" id="1c-2-nee" name="kinderenOverleden" value="nee">
-                        </div>
-                    </div>
-            </fieldset>
-
-            <fieldset class="mainFieldset test hidden" >
-                <legend>
-                    Had dit overleden kind zelf kinderen?
-                </legend>
-
-                <div class="mainHolder">
-                    <div class="holder">
-                        <label for="1c-3-ja">Ja</label>
-                        <input type="radio" id="1c-3-ja" name="kleinkinderen" value="ja">
-                    </div>
-
-                    <div class="holder">
-                        <label for="1c-3-nee">Nee</label>
-                        <input type="radio" id="1c-3-nee" name="kleinkinderen" value="nee">
-                        </div>
-                    </div>
-            </fieldset>
-
-            <div class="subheading">
-                <h2>
-                Gegevens over testament
-                </h2>
-
-                <hr>
-            </div>
-
-            <fieldset class="mainFieldset test" >
-                <legend>
-                    Had de overledene een testament?
-                </legend>
-
-                <div class="mainHolder">
-                    <div class="holder">
-                        <label for="1c-4-ja">Ja</label>
-                        <input type="radio" id="1c-4-ja" name="testament" value="ja">
-                    </div>
-
-                    <div class="holder">
-                        <label for="1c-4-nee">Nee</label>
-                        <input type="radio" id="1c-4-nee" name="testament" value="nee">
-                        </div>
-                    </div>
-                </div>
                     
-
-                <label for="protocolNummer">Protocolnummer notaris
-                        <input id="protocolNummer" type="text" pattern="[0-9]{6}" inputmode="numeric" maxlength="6" required>
-                </label>
-
-                <div class="name">
-                    <div>
-                        <label for="notaris-voorletters">Voorletter(s)
-                            <input id="notaris-voorletters" type="text" required>
-                        </label>
-                        <p class="error" id="error-notaris-voorletters">Vul voorletters in</p>
-                    </div>
-                
-                    <div>
-                        <label for="notaris-tussenvoegsel">Tussenvoegsel(s)
-                            <input id="notaris-tussenvoegsel" type="text">
-                        </label>
+                        <div>
+                            <label for="overledene-tussenvoegsel">Tussenvoegsel(s)
+                                <input id="overledene-tussenvoegsel" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                            </label>
+                        </div>
+                    
+                        <div class="achternaam">
+                            <label for="overledene-achternaam">Achternaam
+                                <input id="overledene-achternaam" type="text" required pattern="[A-Za-z]+" title="Vul alleen letters in">
+                            </label>
+                            <p class="error" id="error-overledene-achternaam">Vul achternaam in</p>
+                        </div>
                     </div>
                     
-                    <div class="achternaam">
-                        <label for="notaris-achternaam">Achternaam
-                            <input id="notaris-achternaam" type="text" required>
-                        </label>
-                        <p class="error" id="error-notaris-achternaam">Vul voorletters in</p>
+                    <div class="name">
+                        <div>
+                            <label for="bsn">Bsn overledene
+                                <input id="bsn" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                            </label>
+                            <p class="error" id="error-ongeldige-bsn">Vul een geldig BSN in (8 of 9 cijfers)</p>
+                        </div>
+                    
+                        <div>
+                            <label for="date">Overlijdensdatum
+                                <input id="date" type="date" required>
+                            </label>
+                        </div>
                     </div>
-                </div>
-
-                <!-- <p class="error" id="error-notaris" aria-live="polite">Dit veld is incorrect</p> -->
-            </fieldset>
-
-            <div class="subheading">
-                <h2>
-                Voor wie doet u geen aangifte?
-                </h2>
-
-                <hr>
+                </fieldset>
             </div>
 
-            <fieldset class="mainFieldset test verkrijgerDeel" >
+
+            <!-- gegevens van de erfgenaam -->
+            <div class="wrapper">
+                <div class="subheading">
+                    <h2>
+                    Gegevens van de erfgenaam
+                    </h2>
+
+                    <hr>
+                </div>
+
+                <fieldset class="mainFieldset test" tabindex="0">
+                    <legend>
+                            Was de overledene getrouwd of had de overledene eengeregistreerde partner op het moment van overlijden?
+                    </legend>
+
+                    <details>
+                        <summary>Toelichting: Getrouwd of geregistreerd partnerschap</summary>
+                        <p>Vul deze vraag in als de overledene op de datum van overlijden getrouwd was of een geregistreerde partner had.</p> <br>
+                        <p>U hoeft deze vraag niet in te vullen als:</p>
+                        <ul>
+                            <li>de overledene een notarieel samenlevingscontract had met diens partner</li>
+                            <li>de overledene samen met een partner of huisgenoot op hetzelfde adres stond ingeschreven in de Basisregistratie Personen (BRP) van de gemeente</li>
+                        </ul> <br>
+                        <p><strong>Finaal verrekenbeding</strong></p>
+                        <p>Was de overledene getrouwd op huwelijkse voorwaarden, of hadden de overledene en de partner een geregistreerd partnerschap met partnerschapsvoorwaarden? Dan kan het zijn dat zij samen een finaal verrekenbeding hebben.</p>
+                        <p>Dit betekent dat bij overlijden het gezamenlijke vermogen verrekend wordt op dezelfde manier als wanneer ze in gemeenschap van goederen waren getrouwd, of alsof zij geen partnerschapsvoorwaarden hadden. De waarde van sommige zaken kan buiten deze verdeling gehouden worden, zoals het vermogen dat één van de partners al had voordat zij gingen trouwen.</p>
+                    </details>
+
+                    <div class="mainHolder">
+                            <div class="holder">
+                                <label for="1b-1-ja">Ja</label>
+                                <input type="radio" id="1b-1-ja" name="getrouwd" value="ja" required>
+                            </div>
+
+                        <div class="holder">
+                            <label for="1b-1-nee">Nee</label>
+                                <input type="radio" id="1b-1-nee" name="getrouwd" value="nee">
+                            </div>
+                        </div>
+                        <p class="error" id="error-getrouwd">Maak een keuze</p>
+                </fieldset>
+
+                <fieldset class="mainFieldset test hidden" >
+                    <legend>
+                            Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
+                    </legend>
+
+                    <div class="mainHolder">
+                        <div class="holder">
+                            <label for="1b-2-ja">Ja</label>
+                            <input type="radio" id="1b-2-ja" name="huwelijkseVoorwaarden" value="ja" >
+                        </div>
+
+                        <div class="holder">
+                            <label for="1b-2-nee">Nee</label>
+                            <input type="radio" id="1b-2-nee" name="huwelijkseVoorwaarden" value="nee">
+                        </div>
+                    </div>
+                    <p class="error" id="error-huwelijkseVoorwaarden">Maak een keuze</p>
+                </fieldset>
+
+                <fieldset class="mainFieldset test hidden" >
+                    <legend>
+                            Hadden de overledene en diens partner een finaal verrekenbeding?
+                    </legend>
+
+                    <div class="mainHolder">
+                        <div class="holder">
+                            <label for="1b-3-ja">Ja</label>
+                            <input type="radio" id="1b-3-ja" name="finaalVerrekenbeding" value="ja">
+                        </div>
+
+                        <div class="holder">
+                            <label for="1b-3-nee">Nee</label>
+                            <input type="radio" id="1b-3-nee" name="finaalVerrekenbeding" value="nee">
+                        </div>
+                    </div>
+                    <p class="error" id="error-finaalVerrekenbeding">Maak een keuze</p>
+                </fieldset>
+
+                <fieldset class="mainFieldset test hidden">
+                        <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
+                        <input type="date" id="datumHuwelijkseVoorwaarden" name="datumHuwelijkseVoorwaarden">
+                </fieldset>
+                <p class="error" id="error-datumHuwelijkseVoorwaarden">Kies een datum</p>
+            </div>
+
+
+            <!-- gegevens van de kinderen -->
+            <div class="wrapper">
+                <div class="subheading">
+                    <h2>
+                    Gegevens van de kinderen
+                    </h2>
+
+                    <hr>
+                </div>
+
+                <fieldset class="mainFieldset test" >
+                    <legend>
+                        Had de overledene kinderen?
+                    </legend>
+
+                    <details>
+                        <summary>Toelichting: Kinderen</summary>
+                        <p>Het gaat hier om kinderen die:</p> <br>
+                        <ul>
+                            <li>door geboorte of erkenning eigen kind van de overledene zijn</li> 
+                            <li>door de overledene zijn geadopteerd</li>
+                        </ul> <br>
+                        <p>Het kan zijn dat een (klein)kind van de overledene nog niet geboren is, maar waarvan de moeder zwanger was op het moment van overlijden. Voor dit kind kunt u pas aangifte erfbelasting doen als het geboren is. U kruist dan de relatie '(klein)kind' aan.</p>
+                        <p>U geeft aan dat er een ongeboren kind is door ons een brief te sturen met daarin uw naam, BSN en de overlijdensdatum van de overledene:</p> <br>
+                        <address>
+                            Belastingdienst/Kantoor Eindhoven<br>
+                            Antwoordnummer 14660<br>
+                            5600 WK Eindhoven
+                        </address> <br>
+                        <p>De andere verkrijgers moeten wel binnen 8 maanden aangifte doen.</p>
+                        <p><strong>Let op!</strong> Het gaat hier niet om pleegkinderen of stiefkinderen.</p>
+                        <p>Als 1 van de kinderen al eerder is overleden en dit kind had zelf kinderen, kan diens deel van de erfenis naar diens kinderen gaan. Dit heet <em>plaatsvervulling</em>. In dat geval geeft u de kleinkinderen van de overledene op als verkrijger.</p>
+                    </details>
+
+                    <div class="mainHolder">
+                            <div class="holder">
+                                <label for="1c-1-ja">Ja</label>
+                            <input type="radio" id="1c-1-ja" name="kinderen" value="ja" required>
+                            </div>
+
+                        <div class="holder">
+                            <label for="1c-1-nee">Nee</label>
+                                <input type="radio" id="1c-1-nee" name="kinderen" value="nee">
+                            </div>
+                        </div>
+                        <p class="error" id="error-kinderen">Maak een keuze</p>
+                </fieldset>
+
+                <fieldset class="mainFieldset test hidden" >
+                    <legend>
+                        Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
+                    </legend>
+
+                    <div class="mainHolder">
+                        <div class="holder">
+                            <label for="1c-2-ja">Ja</label>
+                            <input type="radio" id="1c-2-ja" name="kinderenOverleden" value="ja"> 
+                        </div>
+
+                        <div class="holder">
+                            <label for="1c-2-nee">Nee</label>
+                            <input type="radio" id="1c-2-nee" name="kinderenOverleden" value="nee">
+                        </div>
+                </fieldset>
+
+                <fieldset class="mainFieldset test hidden" >
+                    <legend>
+                        Had dit overleden kind zelf kinderen?
+                    </legend>
+
+                    <div class="mainHolder">
+                        <div class="holder">
+                            <label for="1c-3-ja">Ja</label>
+                            <input type="radio" id="1c-3-ja" name="kleinkinderen" value="ja">
+                        </div>
+
+                        <div class="holder">
+                            <label for="1c-3-nee">Nee</label>
+                            <input type="radio" id="1c-3-nee" name="kleinkinderen" value="nee">
+                            </div>
+                        </div>
+                </fieldset>
+            </div>
+
+            <!-- gegevens over testament -->
+            <div class="wrapper">
+                <div class="subheading">
+                    <h2>
+                    Gegevens over testament
+                    </h2>
+
+                    <hr>
+                </div>
+
+                <fieldset class="mainFieldset test" >
+                    <legend>
+                        Had de overledene een testament?
+                    </legend>
+
+                    <details>
+                        <summary>Toelichting: Testament</summary>
+                        <p>Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament. Vul ook het protocolnummer in.</p> <br>
+
+                        <p><strong>Protocolnummer van een notaris in functie</strong></p>
+                        <p>Het nummer van een notaris in functie vindt u op <a href="https://www.registernotariaat.nl" target="_blank">registernotariaat.nl</a> in het Register notariaat. Het actieve protocolnummer is dat waar geen 'Datum eind' bij staat.</p>
+                        <p>Hebt u ook een adres nodig? Ga dan naar <a href="https://www.notaris.nl" target="_blank">notaris.nl</a> en vul de plaatsnaam in bij 'Zoek een notaris'. U ziet dan van elk kantoor in de regio het adres.</p> <br>
+
+                        <p><strong>Protocolnummer van een notaris die gestopt is</strong></p>
+                        <p>De opvolger van een notaris die gestopt is, vindt u op <a href="https://www.notaris.nl" target="_blank">notaris.nl</a> in het opvolgersarchief. Daar ziet u een naam, kantoor en adres. Die gegevens gebruikt u vervolgens om het protocolnummer te zoeken op <a href="https://www.registernotariaat.nl" target="_blank">registernotariaat.nl</a> in het Register notariaat.</p>
+                        <p>Staan er meerdere nummers en komt u er niet uit? Neem dan contact op met het notariskantoor.</p>
+                    </details>
+
+                    <div class="mainHolder">
+                        <div class="holder">
+                            <label for="1c-4-ja">Ja</label>
+                            <input type="radio" id="1c-4-ja" name="testament" value="ja">
+                        </div>
+
+                        <div class="holder">
+                            <label for="1c-4-nee">Nee</label>
+                            <input type="radio" id="1c-4-nee" name="testament" value="nee">
+                        </div>
+                    </div>
+                        
+
+                    <div class="wrapper hidden">
+                        <label for="protocolNummer">Protocolnummer notaris
+                            <input id="protocolNummer" type="text" pattern="[0-9]{6}" inputmode="numeric" maxlength="6">
+                        </label>
+                        <p class="error" id="error-protocolNummer">Vul een geldig protocolnummer in. Moet uit 6 cijfers bestaan.</p>
+
+                        <!-- https://stackoverflow.com/questions/37548397/html5-validate-input-to-accept-alphabets-only -->
+                        <div class="name">
+                            <div>
+                                <label for="notaris-voorletters">Voorletter(s)
+                                    <input id="notaris-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                </label>
+                                <p class="error" id="error-notaris-voorletters">Vul voorletters in</p>
+                            </div>
+                        
+                            <div>
+                                <label for="notaris-tussenvoegsel">Tussenvoegsel(s)
+                                    <input id="notaris-tussenvoegsel" type="text">
+                                </label>
+                            </div>
+                            
+                            <div class="achternaam">
+                                <label for="notaris-achternaam">Achternaam
+                                    <input id="notaris-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                </label>
+                                <p class="error" id="error-notaris-achternaam">Vul achternaam in</p>
+                            </div>
+                        </div>
+
+                        <!-- <div>
+                            <label for="notaris-vestigingsplaats">Vestigingsplaats
+                                <input id="notaris-vestigingsplaats" type="text" pattern="[A-Za-z\s]+" title="Vul alleen letters in">
+                            </label>
+                            <p class="error" id="error-notaris-vestigingsplaats">Vul vestigingsplaats in</p>
+                        </div> -->
+
+                        <!-- datalist voor steden https://claude.ai/chat/97981b05-162e-48de-a359-090140661e25 -->
+                        <div>
+                            <label for="notaris-vestigingsplaats">Vestigingsplaats
+                                <input 
+                                    id="notaris-vestigingsplaats" 
+                                    type="text" 
+                                    pattern="[A-Za-z\s]+" 
+                                    title="Vul alleen letters in"
+                                    list="steden-lijst"
+                                    autocomplete="off"
+                                >
+                            </label>
+                            <datalist id="steden-lijst">
+                                <option value="Amsterdam">
+                                <option value="Rotterdam">
+                                <option value="Den Haag">
+                                <option value="Utrecht">
+                                <option value="Eindhoven">
+                                <option value="Groningen">
+                                <option value="Tilburg">
+                                <option value="Almere">
+                                <option value="Breda">
+                                <option value="Nijmegen">
+                                <option value="Enschede">
+                                <option value="Apeldoorn">
+                                <option value="Haarlem">
+                                <option value="Arnhem">
+                                <option value="Amersfoort">
+                                <option value="Zaanstad">
+                                <option value="Haarlemmermeer">
+                                <option value="'s-Hertogenbosch">
+                                <option value="Zwolle">
+                                <option value="Zoetermeer">
+                                <option value="Leiden">
+                                <option value="Maastricht">
+                                <option value="Dordrecht">
+                                <option value="Ede">
+                                <option value="Westland">
+                                <option value="Delft">
+                                <option value="Alkmaar">
+                                <option value="Emmen">
+                                <option value="Deventer">
+                                <option value="Venlo">
+                                <option value="Leeuwarden">
+                                <option value="Sittard-Geleen">
+                                <option value="Helmond">
+                                <option value="Oss">
+                                <option value="Hilversum">
+                                <option value="Hengelo">
+                                <option value="Amstelveen">
+                                <option value="Purmerend">
+                                <option value="Roosendaal">
+                                <option value="Schiedam">
+                                <option value="Spijkenisse">
+                                <option value="Vlaardingen">
+                                <option value="Gouda">
+                                <option value="Hoorn">
+                                <option value="Alphen aan den Rijn">
+                                <option value="Middelburg">
+                                <option value="Lelystad">
+                                <option value="Bergen op Zoom">
+                                <option value="Zeist">
+                                <option value="Nieuwegein">
+                            </datalist>
+                            <p class="error" id="error-notaris-vestigingsplaats">Vul vestigingsplaats in</p>
+                        </div>
+
+                        <div>
+                            <label for="datumTestament">Datum testament of laatste wijziging
+                                <input id="datumTestament" type="date" name="datumTestament">
+                            </label>
+                            <p class="error" id="error-datumTestament">Kies een datum</p>
+                        </div>
+                    </div>
+
+                    <!-- <p class="error" id="error-notaris" aria-live="polite">Dit veld is incorrect</p> -->
+                </fieldset>
+            </div>
+
+
+            <!-- verkrijgers -->
+            <div class="wrapper">
+                <div class="subheading">
+                    <h2>
+                    Voor wie doet u geen aangifte?
+                    </h2>
+    
+                    <hr>
+                </div>
+
+                <fieldset class="mainFieldset test verkrijgerDeel" >
                 <legend>
                     Zijn er verkrijgers voor wie u geen aangifte doet?
                 </legend>
+
+                <details>
+                    <summary>Toelichting: Verkrijgers zonder aangifte</summary>
+                    <p>Bij deze vraag vult u de gegevens in van de verkrijgers voor wie u geen aangifte doet.</p>
+                    <p>Gaat het om een instelling? Vul dan de naam van de instelling in bij 'achternaam' en het RSIN (niet verplicht).</p> <br>
+
+                    <p><strong>Legitieme portie</strong></p>
+                    <p>Heeft de overledene in het testament bepaald dat één of meer kinderen niets erven? Dan kunnen zij in bepaalde situaties hun legitieme portie opeisen. Dit is de helft van het erfdeel waar kinderen recht op zouden hebben als er geen testament was.</p>
+                    <p>Kruis 'Ja' aan als de verkrijger voor wie u geen aangifte doet een beroep doet op diens legitieme portie.</p> <br>
+
+                    <p><strong>RSIN</strong></p>
+                    <p>RSIN staat voor Rechtspersonen en Samenwerkingsverbanden Informatie Nummer. Een RSIN bestaat uit 9 cijfers. Instellingen en bedrijven die ingeschreven staan bij de Kamer van Koophandel krijgen altijd een RSIN, behalve eenmanszaken. Soms plaatst een organisatie haar RSIN of fiscaal identificatienummer op haar eigen website.</p>
+                </details>
 
                 <div class="mainHolder">
                     <div class="holder">
@@ -304,12 +488,8 @@
                     <div class="holder">
                         <label for="3b-1-nee">Nee</label>
                         <input type="radio" id="3b-1-nee" name="geenAangifte" value="nee">
-                        </div>
                     </div>
                 </div>
-                    
-
-                <!-- verkrijgers -->
             </fieldset>
 
                 <fieldset class="mainFieldset test verkrijger hidden">
@@ -380,6 +560,12 @@
                     <legend>
                         Verkrijger 2
                     </legend>
+                    <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                </svg>
+                Verwijder verkrijger
+                </button>
 
                     <label for="verkrijger2-bsnRsin">Bsn/RSIN
                         <input id="verkrijger2-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" >
@@ -445,6 +631,13 @@
                         Verkrijger 3
                     </legend>
 
+                    <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                </svg>
+                Verwijder verkrijger
+                </button>
+
                     <label for="verkrijger3-bsnRsin">Bsn/RSIN
                         <input id="verkrijger3-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" >
                     </label>
@@ -509,6 +702,13 @@
                         Verkrijger 4
                     </legend>
 
+                    <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                </svg>
+                Verwijder verkrijger
+                </button>
+
                     <label for="verkrijger4-bsnRsin">Bsn/RSIN
                         <input id="verkrijger4-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" >
                     </label>
@@ -572,9 +772,11 @@
                     <button class="verkrijgerToevoegen hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>Voeg verkrijger toe</button>
-    
-                    <button class="verkrijgerVerwijderen hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /> </svg> Verwijder een verkrijger</button>
+                    
+                    <!-- <button class="verkrijgerVerwijderen hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /> </svg> Verwijder een verkrijger</button> -->
                 </div>
+            </div>
+            
 
                 <button type="submit">Verzenden</button>
         </form>

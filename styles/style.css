@@ -9,7 +9,7 @@
 html{
 	scroll-behavior: smooth;
 
-    color-scheme: light dark;
+    color-scheme: light;
     --colour-background: #FFC917;
     --colour-secondary-background: light-dark(#E6E6E9, #252527);
     --colour-grey:light-dark(#F7F7F9, #252527);
@@ -35,9 +35,9 @@ html{
 header{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
     background-color: var(--colour-background);
 }
 
@@ -50,6 +50,46 @@ nav{
 
 nav p{
     color: #003082;
+}
+
+header svg{
+    width: 2.5em;
+    height: 2.5em;
+    color: #003082;
+    position: relative;
+}
+
+header > label {
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+header label:nth-child(1):not(nav label:nth-child(1)){
+    opacity: 0;
+}
+
+/* colorscheme button */
+input[type="checkbox"]{
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    aspect-ratio: 1;
+    z-index: 2;
+}
+
+nav label{
+    position: relative;
+}
+
+html:has(input[name="colorscheme-btn"]:checked) {
+    color-scheme:dark;
+
+    & header svg{
+        fill: #003082;
+    }
 }
 
 section{
@@ -155,8 +195,16 @@ input{
     background-color: var(--colour-secondary);
 }
 
-.holder input{
-    display: none;
+.holder input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.holder:has(input:focus-visible) label {
+    outline: 2px solid var(--colour-text-secondary);
+    outline-offset: 2px;
 }
 
 .holder label{
@@ -218,8 +266,59 @@ hr{
     padding-bottom: 0.5em;
 }
 
-.test legend{
+legend{
     margin-bottom: 0.8em;
+    font-size: 1.2em;
+}
+
+.mainFieldset .mainFieldset legend{
+    font-size: 1em;
+}
+
+details{
+    margin-bottom: 1em;
+
+    & summary{
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4em;
+    }
+
+    & summary::before {
+        content: "▶";
+        transition: transform 0.2s;
+    }
+
+    &[open] summary::before {
+        transform: rotate(90deg);
+    }
+
+    & summary::after{
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23003082' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z'/%3E%3C/svg%3E");
+
+        background-size: contain;
+    }
+
+    & p{
+        margin-top: 0.2em;
+        font-weight: normal;
+    }
+
+    & ul{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+
+        & li{
+            list-style: disc;
+            margin-left: 1.5em;
+        }
+    }
 }
 
 .subheading{
@@ -232,12 +331,16 @@ hr{
     cursor: pointer;
 }
 
-input:user-invalid {
+
+/* error messages */
+
+input:user-invalid,
+.holder:has(input[type="radio"]:user-invalid) label {
     border: 2px solid red;
 }
 
-input:user-valid {
-    border: 2px solid rgb(0, 255, 64);
+input:required:user-valid{
+    border: 2px solid green;
 }
 
 .error{
@@ -246,22 +349,56 @@ input:user-valid {
     font-size: 14px;
 }
 
-label:has(#overledene-voorletters) + .error,
+fieldset:has(#overledene-voorletters:user-invalid) #error-overledene-voorletters,
 fieldset:has(#overledene-achternaam:user-invalid) #error-overledene-achternaam,
-fieldset:has(#bsn:user-invalid) #error-ongeldige-bsn{
+fieldset:has(#bsn:user-invalid) #error-ongeldige-bsn,
+fieldset:has(#protocolNummer:user-invalid) #error-protocolNummer,
+fieldset:has(#notaris-voorletters:user-invalid) #error-notaris-voorletters,
+fieldset:has(#notaris-tussenvoegsel:user-invalid) #error-notaris-tussenvoegsel,
+fieldset:has(#notaris-achternaam:user-invalid) #error-notaris-achternaam {
+     display: flex;
     display: flex;
     align-items: center;
     gap: 0.4em;
     margin-top: -1em;
     margin-bottom: 1em;
+
+    &::before{
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23BB271A'%3E%3Cpath d='M508.5-291.5Q520-303 520-320t-11.5-28.5Q497-360 480-360t-28.5 11.5Q440-337 440-320t11.5 28.5Q463-280 480-280t28.5-11.5ZM440-440h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/%3E%3C/svg%3E");
+
+        background-size: contain;
+    }
 }
 
+.mainFieldset:has(input[type="radio"]:user-invalid) .error,
+.mainFieldset:not(.hidden):has(input[type="radio"]:user-invalid) .error{
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
 
-/* dit moet anders */
-fieldset:has(#overledene-voorletters:user-invalid) #error-overledene-voorletters::before,
+    &::before{
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23BB271A'%3E%3Cpath d='M508.5-291.5Q520-303 520-320t-11.5-28.5Q497-360 480-360t-28.5 11.5Q440-337 440-320t11.5 28.5Q463-280 480-280t28.5-11.5ZM440-440h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/%3E%3C/svg%3E");
+
+        background-size: contain;
+    }
+}
+
+/* fieldset:has(#overledene-voorletters:user-invalid) #error-overledene-voorletters::before,
 fieldset:has(#overledene-achternaam:user-invalid) #error-overledene-achternaam::before,
 fieldset:has(#bsn:user-invalid) #error-ongeldige-bsn::before {
-    content:"";
+    content: "";
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -269,11 +406,19 @@ fieldset:has(#bsn:user-invalid) #error-ongeldige-bsn::before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23BB271A'%3E%3Cpath d='M508.5-291.5Q520-303 520-320t-11.5-28.5Q497-360 480-360t-28.5 11.5Q440-337 440-320t11.5 28.5Q463-280 480-280t28.5-11.5ZM440-440h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/%3E%3C/svg%3E");
 
     background-size: contain;
-}
+} */
+
+
+/* .mainHolder + .error {
+    display: none;
+} */
+
+
 
 .hidden{
     display: none;
 }
+
 
 /* .mainFieldset:has(input[name="getrouwd"][value="ja"]:checked) {
     +.mainFieldset.hidden{
@@ -321,6 +466,12 @@ fieldset:has(#bsn:user-invalid) #error-ongeldige-bsn::before {
                 display: block;
             }
         }
+    }
+}
+
+.mainFieldset:has(input[name="testament"][value="ja"]:checked) {
+    & div.hidden {
+        display: block;
     }
 }
 
@@ -472,30 +623,49 @@ button svg{
     }
 }
 
-/* colorscheme button */
-input[type="checkbox"]{
-    opacity: 0;
-    cursor: pointer;
-    position: absolute;
-    inset: 0;
-    margin: 0;
-    aspect-ratio: 1;
+
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
-nav label{
-    position: relative;
+/* input.aangeraakt:invalid {
+    border: 2px solid red;
 }
 
-html:has(input[name="colorscheme-btn"]:checked) {
-    color-scheme:dark;
+input.aangeraakt:valid {
+    border: 2px solid green;
+} */
+
+.no-js .verkrijgerVerwijderenIndividueel {
+    display: none;
+} 
+
+.verkrijgerVerwijderenIndividueel {
+    margin-bottom: 1.5em;
+    font-size: 14px;
+    background-color: var(--colour-secondary-background);
+    color: var(--colour-text);
+    align-self: flex-end; /* Uitlijnen rechts in de fieldset */
+}
+
+.verkrijgerVerwijderenIndividueel:hover {
+    background-color: #c4c4c8;
 }
 
 /* animation */
-fieldset, legend{
+/* fieldset, legend{
     animation-name: appear;
     animation-timeline: view();
     animation-range: normal 25%;
     animation-fill-mode: both;
+} */
+
+
+*:focus{
+    outline: 2px solid var(--colour-text-secondary);
+    outline-offset: 2px;
 }
 
 @keyframes appear{
