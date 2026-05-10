@@ -155,6 +155,7 @@ Verder werkt de validatie nog niet helemaal goed zoals er in de screenshot te zi
 - local storage en een reset button 
 - styling verbeterd
 - light en dark mode
+- aria-invalid true en aria describeby toegevoegd
 
 
 ## bronnen

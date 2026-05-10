@@ -85,8 +85,7 @@
                     <div class="name">
                         <div>
                             <label for="overledene-voorletters">Voorletter(s)
-                                <input id="overledene-voorletters" type="text" required pattern="[A-Za-z]+" title="Vul alleen letters in">
-                                <!-- error met span -->
+                                <input id="overledene-voorletters" type="text" required pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-overledene-voorletters">
                             </label>
                             <p class="error" id="error-overledene-voorletters">Vul voorletters in</p>
                         </div>
@@ -99,7 +98,7 @@
                     
                         <div class="achternaam">
                             <label for="overledene-achternaam">Achternaam
-                                <input id="overledene-achternaam" type="text" required pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                <input id="overledene-achternaam" type="text" required pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-overledene-achternaam">
                             </label>
                             <p class="error" id="error-overledene-achternaam">Vul achternaam in</p>
                         </div>
@@ -108,7 +107,7 @@
                     <div class="name">
                         <div>
                             <label for="bsn">Bsn overledene
-                                <input id="bsn" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required>
+                                <input id="bsn" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" required aria-invalid="true" aria-describedby="error-ongeldige-bsn">
                             </label>
                             <p class="error" id="error-ongeldige-bsn">Vul een geldig BSN in (8 of 9 cijfers)</p>
                         </div>
@@ -339,7 +338,7 @@
 
                     <div class="wrapper hidden">
                         <label for="protocolNummer">Protocolnummer notaris
-                            <input id="protocolNummer" type="text" pattern="[0-9]{6}" inputmode="numeric" maxlength="6">
+                            <input id="protocolNummer" type="text" pattern="[0-9]{6}" inputmode="numeric" maxlength="6" title="Vul een geldig protocolnummer in. Moet uit 6 cijfers bestaan." aria-invalid="true" aria-describedby="error-protocolNummer">
                         </label>
                         <p class="error" id="error-protocolNummer">Vul een geldig protocolnummer in. Moet uit 6 cijfers bestaan.</p>
 
@@ -347,7 +346,7 @@
                         <div class="name">
                             <div>
                                 <label for="notaris-voorletters">Voorletter(s)
-                                    <input id="notaris-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                    <input id="notaris-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-notaris-voorletters">
                                 </label>
                                 <p class="error" id="error-notaris-voorletters">Vul voorletters in</p>
                             </div>
@@ -360,7 +359,7 @@
                             
                             <div class="achternaam">
                                 <label for="notaris-achternaam">Achternaam
-                                    <input id="notaris-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                    <input id="notaris-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-notaris-achternaam">
                                 </label>
                                 <p class="error" id="error-notaris-achternaam">Vul achternaam in</p>
                             </div>
@@ -442,7 +441,7 @@
 
                         <div>
                             <label for="datumTestament">Datum testament of laatste wijziging
-                                <input id="datumTestament" type="date" name="datumTestament">
+                                <input id="datumTestament" type="date" name="datumTestament" aria-invalid="true" aria-describedby="error-datumTestament">
                             </label>
                             <p class="error" id="error-datumTestament">Kies een datum</p>
                         </div>
@@ -825,7 +824,7 @@
                     <div class="name">
                         <div>
                             <label for="verkrijger1-bsnRsin">Bsn/RSIN
-                                <input id="verkrijger1-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9">
+                                <input id="verkrijger1-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" title="Vul een geldig BSN/RSIN in (8 of 9 cijfers)" aria-invalid="true" aria-describedby="error-verkrijger1-bsnRsin">
                             </label>
                             <p class="error" id="error-verkrijger1-bsnRsin">Vul een geldig BSN/RSIN in (8 of 9 cijfers)</p>
                         </div>
@@ -834,7 +833,7 @@
                     <div class="name">
                         <div>
                             <label for="verkrijger1-voorletters">Voorletter(s)
-                                <input id="verkrijger1-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                <input id="verkrijger1-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger1-voorletters">
                             </label>
                             <p class="error" id="error-verkrijger1-voorletters">Vul voorletters in</p>
                         </div>
@@ -845,7 +844,7 @@
                         </div>
                         <div class="achternaam">
                             <label for="verkrijger1-achternaam">Achternaam
-                                <input id="verkrijger1-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                <input id="verkrijger1-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger1-achternaam">
                             </label>
                             <p class="error" id="error-verkrijger1-achternaam">Vul achternaam in</p>
                         </div>
@@ -897,7 +896,7 @@
                     <div class="name">
                         <div>
                             <label for="verkrijger2-bsnRsin">Bsn/RSIN
-                                <input id="verkrijger2-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9">
+                                <input id="verkrijger2-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9"  title="Vul een geldig BSN/RSIN in (8 of 9 cijfers)" aria-invalid="true" aria-describedby="error-verkrijger2-bsnRsin">
                             </label>
                             <p class="error" id="error-verkrijger2-bsnRsin">Vul een geldig BSN/RSIN in (8 of 9 cijfers)</p>
                         </div>
@@ -906,7 +905,7 @@
                     <div class="name">
                         <div>
                             <label for="verkrijger2-voorletters">Voorletter(s)
-                                <input id="verkrijger2-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                <input id="verkrijger2-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger2-voorletters">
                             </label>
                             <p class="error" id="error-verkrijger2-voorletters">Vul voorletters in</p>
                         </div>
@@ -917,7 +916,7 @@
                         </div>
                         <div class="achternaam">
                             <label for="verkrijger2-achternaam">Achternaam
-                                <input id="verkrijger2-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                <input id="verkrijger2-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger2-achternaam">
                             </label>
                             <p class="error" id="error-verkrijger2-achternaam">Vul achternaam in</p>
                         </div>
@@ -969,7 +968,7 @@
                     <div class="name">
                         <div>
                             <label for="verkrijger3-bsnRsin">Bsn/RSIN
-                                <input id="verkrijger3-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9">
+                                <input id="verkrijger3-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" title="Vul een geldig BSN/RSIN in (8 of 9 cijfers)" aria-invalid="true" aria-describedby="error-verkrijger3-bsnRsin">
                             </label>
                             <p class="error" id="error-verkrijger3-bsnRsin">Vul een geldig BSN/RSIN in (8 of 9 cijfers)</p>
                         </div>
@@ -978,7 +977,7 @@
                     <div class="name">
                         <div>
                             <label for="verkrijger3-voorletters">Voorletter(s)
-                                <input id="verkrijger3-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                <input id="verkrijger3-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger3-voorletters">
                             </label>
                             <p class="error" id="error-verkrijger3-voorletters">Vul voorletters in</p>
                         </div>
@@ -989,7 +988,7 @@
                         </div>
                         <div class="achternaam">
                             <label for="verkrijger3-achternaam">Achternaam
-                                <input id="verkrijger3-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                <input id="verkrijger3-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger3-achternaam">
                             </label>
                             <p class="error" id="error-verkrijger3-achternaam">Vul achternaam in</p>
                         </div>
@@ -1041,7 +1040,7 @@
                     <div class="name">
                         <div>
                             <label for="verkrijger4-bsnRsin">Bsn/RSIN
-                                <input id="verkrijger4-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9">
+                                <input id="verkrijger4-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" title="Vul een geldig BSN/RSIN in (8 of 9 cijfers)" aria-invalid="true" aria-describedby="error-verkrijger4-bsnRsin">
                             </label>
                             <p class="error" id="error-verkrijger4-bsnRsin">Vul een geldig BSN/RSIN in (8 of 9 cijfers)</p>
                         </div>
@@ -1050,7 +1049,7 @@
                     <div class="name">
                         <div>
                             <label for="verkrijger4-voorletters">Voorletter(s)
-                                <input id="verkrijger4-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                <input id="verkrijger4-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger4-voorletters">
                             </label>
                             <p class="error" id="error-verkrijger4-voorletters">Vul voorletters in</p>
                         </div>
@@ -1061,7 +1060,7 @@
                         </div>
                         <div class="achternaam">
                             <label for="verkrijger4-achternaam">Achternaam
-                                <input id="verkrijger4-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                                <input id="verkrijger4-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger4-achternaam">
                             </label>
                             <p class="error" id="error-verkrijger4-achternaam">Vul achternaam in</p>
                         </div>
