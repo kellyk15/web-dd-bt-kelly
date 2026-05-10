@@ -140,7 +140,7 @@ Verder werkt de validatie nog niet helemaal goed zoals er in de screenshot te zi
 ## Waar heb ik aan gewerkt sinds de herkansing?
 - Met javascript de verborgen buttons zijn nu disabled als ze verborgen zijn, dus ze worden dan niet meegestuurd & geldt ook de voor de verkrijgers
 - Verkrijgers zijn nu met de javascript individueel verborgen
-- Focus op de radio buttons door ze niet op display:none te zetten maar positon absolute en width en height 0, maar wel een focus state toevoegen.
+- Focus op de radio buttons door ze niet op display:none te zetten maar positon absolute en width en height 0, maar wel een focus state toevoegen. Want kon er eerst niet komen met keyboard alleen.
 - Het is niet mogelijk om de hidden radio buttons alleen required te maken zonder javascript. Ik heb het geprobeerd met hidden class en html hidden atrribute. Dit is iets dat ik wel ga doen als er wel javascript is voor de progressive enhanchement.
 
 - gegevens testament klapt nu ook in en uit op basis van antwoord
