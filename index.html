@@ -73,6 +73,7 @@
                     Gegevens van de overledene
                 </h2> 
                 <hr>
+                <button type="button" id="reset-btn">reset</button>
             </div>
             
             <div class="wrapper">
@@ -132,8 +133,8 @@
                     <hr>
                 </div>
 
-                <fieldset class="mainFieldset test" tabindex="0">
-                    <legend>
+                <fieldset class="mainFieldset test">
+                    <legend tabindex="0">
                             Was de overledene getrouwd of had de overledene eengeregistreerde partner op het moment van overlijden?
                     </legend>
 
@@ -221,7 +222,7 @@
                 </div>
 
                 <fieldset class="mainFieldset test" >
-                    <legend>
+                    <legend tabindex="0">
                         Had de overledene kinderen?
                     </legend>
 
@@ -305,7 +306,7 @@
                 </div>
 
                 <fieldset class="mainFieldset test" >
-                    <legend>
+                    <legend tabindex="0">
                         Had de overledene een testament?
                     </legend>
 
@@ -325,7 +326,7 @@
                     <div class="mainHolder">
                         <div class="holder">
                             <label for="1c-4-ja">Ja</label>
-                            <input type="radio" id="1c-4-ja" name="testament" value="ja">
+                            <input type="radio" id="1c-4-ja" name="testament" value="ja" required>
                         </div>
 
                         <div class="holder">
@@ -333,6 +334,7 @@
                             <input type="radio" id="1c-4-nee" name="testament" value="nee">
                         </div>
                     </div>
+                    <p class="error" id="error-testament">Maak een keuze</p>
                         
 
                     <div class="wrapper hidden">
@@ -452,7 +454,7 @@
 
 
             <!-- verkrijgers -->
-            <div class="wrapper">
+            <!-- <div class="wrapper">
                 <div class="subheading">
                     <h2>
                     Voor wie doet u geen aangifte?
@@ -482,7 +484,7 @@
                 <div class="mainHolder">
                     <div class="holder">
                         <label for="3b-1-ja">Ja</label>
-                        <input type="radio" id="3b-1-ja" name="geenAangifte" value="ja">
+                        <input type="radio" id="3b-1-ja" name="geenAangifte" value="ja" required>
                     </div>
 
                     <div class="holder">
@@ -490,6 +492,7 @@
                         <input type="radio" id="3b-1-nee" name="geenAangifte" value="nee">
                     </div>
                 </div>
+                <p class="error" id="error-verkrijger">Maak een keuze</p>
             </fieldset>
 
                 <fieldset class="mainFieldset test verkrijger hidden">
@@ -505,6 +508,7 @@
                         <label for="verkrijger1-voorletters">Voorletter(s)
                             <input id="verkrijger1-voorletters" type="text" >
                         </label>
+                        <p class="error" id="error-verkrijger1-voorletters">Vul voorletters in</p>
                     
                         <label for="verkrijger1-tussenvoegsel">Tussenvoegsel(s)
                             <input id="verkrijger1-tussenvoegsel" type="text">
@@ -513,6 +517,7 @@
                         <label for="verkrijger1-achternaam">Achternaam
                             <input id="verkrijger1-achternaam" type="text" >
                         </label>
+                        <p class="error" id="error-verkrijger1-achternaam">Vul achternaam in</p>
                     </div>
 
                     <fieldset class="mainFieldset test" >
@@ -557,15 +562,17 @@
                 </fieldset>
 
                 <fieldset class="mainFieldset test verkrijger verkrijgerHidden hidden">
-                    <legend>
-                        Verkrijger 2
-                    </legend>
-                    <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 1">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
-                </svg>
-                Verwijder verkrijger
-                </button>
+                    <div class="wrapper-verkrijger-btn">
+                        <legend>
+                            Verkrijger 2
+                        </legend>
+                        <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            Verwijder verkrijger
+                        </button>
+                    </div>
 
                     <label for="verkrijger2-bsnRsin">Bsn/RSIN
                         <input id="verkrijger2-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" >
@@ -627,16 +634,18 @@
                 </fieldset>
 
                 <fieldset class="mainFieldset test verkrijger verkrijgerHidden hidden">
-                    <legend>
-                        Verkrijger 3
-                    </legend>
-
-                    <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 1">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
-                </svg>
-                Verwijder verkrijger
-                </button>
+                    
+                    <div class="wrapper-verkrijger-btn">
+                        <legend>
+                            Verkrijger 3
+                        </legend>
+                        <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            Verwijder verkrijger
+                        </button>
+                    </div>
 
                     <label for="verkrijger3-bsnRsin">Bsn/RSIN
                         <input id="verkrijger3-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" >
@@ -698,16 +707,17 @@
                 </fieldset>
 
                 <fieldset class="mainFieldset test verkrijger verkrijgerHidden hidden">
-                    <legend>
-                        Verkrijger 4
-                    </legend>
-
-                    <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 1">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
-                </svg>
-                Verwijder verkrijger
-                </button>
+                    <div class="wrapper-verkrijger-btn">
+                        <legend>
+                            Verkrijger 4
+                        </legend>
+                        <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            Verwijder verkrijger
+                        </button>
+                    </div>
 
                     <label for="verkrijger4-bsnRsin">Bsn/RSIN
                         <input id="verkrijger4-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9" >
@@ -772,11 +782,331 @@
                     <button class="verkrijgerToevoegen hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>Voeg verkrijger toe</button>
-                    
-                    <!-- <button class="verkrijgerVerwijderen hidden" type="button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /> </svg> Verwijder een verkrijger</button> -->
+                </div>
+            </div> -->
+            
+            <div class="wrapper">
+                <div class="subheading">
+                    <h2>Voor wie doet u geen aangifte?</h2>
+                    <hr>
+                </div>
+
+                <fieldset class="mainFieldset test verkrijgerDeel">
+                    <legend>Zijn er verkrijgers voor wie u geen aangifte doet?</legend>
+
+                    <details>
+                        <summary>Toelichting: Verkrijgers zonder aangifte</summary>
+                        <p>Bij deze vraag vult u de gegevens in van de verkrijgers voor wie u geen aangifte doet.</p>
+                        <p>Gaat het om een instelling? Vul dan de naam van de instelling in bij 'achternaam' en het RSIN (niet verplicht).</p> <br>
+                        <p><strong>Legitieme portie</strong></p>
+                        <p>Heeft de overledene in het testament bepaald dat één of meer kinderen niets erven? Dan kunnen zij in bepaalde situaties hun legitieme portie opeisen. Dit is de helft van het erfdeel waar kinderen recht op zouden hebben als er geen testament was.</p>
+                        <p>Kruis 'Ja' aan als de verkrijger voor wie u geen aangifte doet een beroep doet op diens legitieme portie.</p> <br>
+                        <p><strong>RSIN</strong></p>
+                        <p>RSIN staat voor Rechtspersonen en Samenwerkingsverbanden Informatie Nummer. Een RSIN bestaat uit 9 cijfers. Instellingen en bedrijven die ingeschreven staan bij de Kamer van Koophandel krijgen altijd een RSIN, behalve eenmanszaken. Soms plaatst een organisatie haar RSIN of fiscaal identificatienummer op haar eigen website.</p>
+                    </details>
+
+                    <div class="mainHolder">
+                        <div class="holder">
+                            <label for="3b-1-ja">Ja</label>
+                            <input type="radio" id="3b-1-ja" name="geenAangifte" value="ja" required>
+                        </div>
+                        <div class="holder">
+                            <label for="3b-1-nee">Nee</label>
+                            <input type="radio" id="3b-1-nee" name="geenAangifte" value="nee">
+                        </div>
+                    </div>
+                    <p class="error" id="error-verkrijger">Maak een keuze</p>
+                </fieldset>
+
+                <!-- Verkrijger 1 -->
+                <fieldset class="mainFieldset test verkrijger hidden">
+                    <legend>Verkrijger 1</legend>
+
+                    <div class="name">
+                        <div>
+                            <label for="verkrijger1-bsnRsin">Bsn/RSIN
+                                <input id="verkrijger1-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9">
+                            </label>
+                            <p class="error" id="error-verkrijger1-bsnRsin">Vul een geldig BSN/RSIN in (8 of 9 cijfers)</p>
+                        </div>
+                    </div>
+
+                    <div class="name">
+                        <div>
+                            <label for="verkrijger1-voorletters">Voorletter(s)
+                                <input id="verkrijger1-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                            </label>
+                            <p class="error" id="error-verkrijger1-voorletters">Vul voorletters in</p>
+                        </div>
+                        <div>
+                            <label for="verkrijger1-tussenvoegsel">Tussenvoegsel(s)
+                                <input id="verkrijger1-tussenvoegsel" type="text">
+                            </label>
+                        </div>
+                        <div class="achternaam">
+                            <label for="verkrijger1-achternaam">Achternaam
+                                <input id="verkrijger1-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                            </label>
+                            <p class="error" id="error-verkrijger1-achternaam">Vul achternaam in</p>
+                        </div>
+                    </div>
+
+                    <fieldset class="mainFieldset test">
+                        <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="verkrijger1-heleVermogen-ja">Ja</label>
+                                <input type="radio" id="verkrijger1-heleVermogen-ja" name="verkrijger1-heleVermogen" value="ja">
+                            </div>
+                            <div class="holder">
+                                <label for="verkrijger1-heleVermogen-nee">Nee</label>
+                                <input type="radio" id="verkrijger1-heleVermogen-nee" name="verkrijger1-heleVermogen" value="nee">
+                            </div>
+                        </div>
+                        <p class="error" id="error-verkrijger1-heleVermogen">Maak een keuze</p>
+                    </fieldset>
+
+                    <fieldset class="mainFieldset test">
+                        <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="verkrijger1-legitiemePortie-ja">Ja</label>
+                                <input type="radio" id="verkrijger1-legitiemePortie-ja" name="verkrijger1-legitiemePortie" value="ja">
+                            </div>
+                            <div class="holder">
+                                <label for="verkrijger1-legitiemePortie-nee">Nee</label>
+                                <input type="radio" id="verkrijger1-legitiemePortie-nee" name="verkrijger1-legitiemePortie" value="nee">
+                            </div>
+                        </div>
+                        <p class="error" id="error-verkrijger1-legitiemePortie">Maak een keuze</p>
+                    </fieldset>
+                </fieldset>
+
+                <!-- Verkrijger 2 -->
+                <fieldset class="mainFieldset test verkrijger verkrijgerHidden hidden">
+                    <div class="wrapper-verkrijger-btn">
+                        <legend>Verkrijger 2</legend>
+                        <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            Verwijder verkrijger
+                        </button>
+                    </div>
+
+                    <div class="name">
+                        <div>
+                            <label for="verkrijger2-bsnRsin">Bsn/RSIN
+                                <input id="verkrijger2-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9">
+                            </label>
+                            <p class="error" id="error-verkrijger2-bsnRsin">Vul een geldig BSN/RSIN in (8 of 9 cijfers)</p>
+                        </div>
+                    </div>
+
+                    <div class="name">
+                        <div>
+                            <label for="verkrijger2-voorletters">Voorletter(s)
+                                <input id="verkrijger2-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                            </label>
+                            <p class="error" id="error-verkrijger2-voorletters">Vul voorletters in</p>
+                        </div>
+                        <div>
+                            <label for="verkrijger2-tussenvoegsel">Tussenvoegsel(s)
+                                <input id="verkrijger2-tussenvoegsel" type="text">
+                            </label>
+                        </div>
+                        <div class="achternaam">
+                            <label for="verkrijger2-achternaam">Achternaam
+                                <input id="verkrijger2-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                            </label>
+                            <p class="error" id="error-verkrijger2-achternaam">Vul achternaam in</p>
+                        </div>
+                    </div>
+
+                    <fieldset class="mainFieldset test">
+                        <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="verkrijger2-heleVermogen-ja">Ja</label>
+                                <input type="radio" id="verkrijger2-heleVermogen-ja" name="verkrijger2-heleVermogen" value="ja">
+                            </div>
+                            <div class="holder">
+                                <label for="verkrijger2-heleVermogen-nee">Nee</label>
+                                <input type="radio" id="verkrijger2-heleVermogen-nee" name="verkrijger2-heleVermogen" value="nee">
+                            </div>
+                        </div>
+                        <p class="error" id="error-verkrijger2-heleVermogen">Maak een keuze</p>
+                    </fieldset>
+
+                    <fieldset class="mainFieldset test">
+                        <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="verkrijger2-legitiemePortie-ja">Ja</label>
+                                <input type="radio" id="verkrijger2-legitiemePortie-ja" name="verkrijger2-legitiemePortie" value="ja">
+                            </div>
+                            <div class="holder">
+                                <label for="verkrijger2-legitiemePortie-nee">Nee</label>
+                                <input type="radio" id="verkrijger2-legitiemePortie-nee" name="verkrijger2-legitiemePortie" value="nee">
+                            </div>
+                        </div>
+                        <p class="error" id="error-verkrijger2-legitiemePortie">Maak een keuze</p>
+                    </fieldset>
+                </fieldset>
+
+                <!-- Verkrijger 3 -->
+                <fieldset class="mainFieldset test verkrijger verkrijgerHidden hidden">
+                    <div class="wrapper-verkrijger-btn">
+                        <legend>Verkrijger 3</legend>
+                        <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            Verwijder verkrijger
+                        </button>
+                    </div>
+
+                    <div class="name">
+                        <div>
+                            <label for="verkrijger3-bsnRsin">Bsn/RSIN
+                                <input id="verkrijger3-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9">
+                            </label>
+                            <p class="error" id="error-verkrijger3-bsnRsin">Vul een geldig BSN/RSIN in (8 of 9 cijfers)</p>
+                        </div>
+                    </div>
+
+                    <div class="name">
+                        <div>
+                            <label for="verkrijger3-voorletters">Voorletter(s)
+                                <input id="verkrijger3-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                            </label>
+                            <p class="error" id="error-verkrijger3-voorletters">Vul voorletters in</p>
+                        </div>
+                        <div>
+                            <label for="verkrijger3-tussenvoegsel">Tussenvoegsel(s)
+                                <input id="verkrijger3-tussenvoegsel" type="text">
+                            </label>
+                        </div>
+                        <div class="achternaam">
+                            <label for="verkrijger3-achternaam">Achternaam
+                                <input id="verkrijger3-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                            </label>
+                            <p class="error" id="error-verkrijger3-achternaam">Vul achternaam in</p>
+                        </div>
+                    </div>
+
+                    <fieldset class="mainFieldset test">
+                        <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="verkrijger3-heleVermogen-ja">Ja</label>
+                                <input type="radio" id="verkrijger3-heleVermogen-ja" name="verkrijger3-heleVermogen" value="ja">
+                            </div>
+                            <div class="holder">
+                                <label for="verkrijger3-heleVermogen-nee">Nee</label>
+                                <input type="radio" id="verkrijger3-heleVermogen-nee" name="verkrijger3-heleVermogen" value="nee">
+                            </div>
+                        </div>
+                        <p class="error" id="error-verkrijger3-heleVermogen">Maak een keuze</p>
+                    </fieldset>
+
+                    <fieldset class="mainFieldset test">
+                        <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="verkrijger3-legitiemePortie-ja">Ja</label>
+                                <input type="radio" id="verkrijger3-legitiemePortie-ja" name="verkrijger3-legitiemePortie" value="ja">
+                            </div>
+                            <div class="holder">
+                                <label for="verkrijger3-legitiemePortie-nee">Nee</label>
+                                <input type="radio" id="verkrijger3-legitiemePortie-nee" name="verkrijger3-legitiemePortie" value="nee">
+                            </div>
+                        </div>
+                        <p class="error" id="error-verkrijger3-legitiemePortie">Maak een keuze</p>
+                    </fieldset>
+                </fieldset>
+
+                <!-- Verkrijger 4 -->
+                <fieldset class="mainFieldset test verkrijger verkrijgerHidden hidden">
+                    <div class="wrapper-verkrijger-btn">
+                        <legend>Verkrijger 4</legend>
+                        <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            Verwijder verkrijger
+                        </button>
+                    </div>
+
+                    <div class="name">
+                        <div>
+                            <label for="verkrijger4-bsnRsin">Bsn/RSIN
+                                <input id="verkrijger4-bsnRsin" type="text" pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9">
+                            </label>
+                            <p class="error" id="error-verkrijger4-bsnRsin">Vul een geldig BSN/RSIN in (8 of 9 cijfers)</p>
+                        </div>
+                    </div>
+
+                    <div class="name">
+                        <div>
+                            <label for="verkrijger4-voorletters">Voorletter(s)
+                                <input id="verkrijger4-voorletters" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                            </label>
+                            <p class="error" id="error-verkrijger4-voorletters">Vul voorletters in</p>
+                        </div>
+                        <div>
+                            <label for="verkrijger4-tussenvoegsel">Tussenvoegsel(s)
+                                <input id="verkrijger4-tussenvoegsel" type="text">
+                            </label>
+                        </div>
+                        <div class="achternaam">
+                            <label for="verkrijger4-achternaam">Achternaam
+                                <input id="verkrijger4-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in">
+                            </label>
+                            <p class="error" id="error-verkrijger4-achternaam">Vul achternaam in</p>
+                        </div>
+                    </div>
+
+                    <fieldset class="mainFieldset test">
+                        <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="verkrijger4-heleVermogen-ja">Ja</label>
+                                <input type="radio" id="verkrijger4-heleVermogen-ja" name="verkrijger4-heleVermogen" value="ja">
+                            </div>
+                            <div class="holder">
+                                <label for="verkrijger4-heleVermogen-nee">Nee</label>
+                                <input type="radio" id="verkrijger4-heleVermogen-nee" name="verkrijger4-heleVermogen" value="nee">
+                            </div>
+                        </div>
+                        <p class="error" id="error-verkrijger4-heleVermogen">Maak een keuze</p>
+                    </fieldset>
+
+                    <fieldset class="mainFieldset test">
+                        <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                                <label for="verkrijger4-legitiemePortie-ja">Ja</label>
+                                <input type="radio" id="verkrijger4-legitiemePortie-ja" name="verkrijger4-legitiemePortie" value="ja">
+                            </div>
+                            <div class="holder">
+                                <label for="verkrijger4-legitiemePortie-nee">Nee</label>
+                                <input type="radio" id="verkrijger4-legitiemePortie-nee" name="verkrijger4-legitiemePortie" value="nee">
+                            </div>
+                        </div>
+                        <p class="error" id="error-verkrijger4-legitiemePortie">Maak een keuze</p>
+                    </fieldset>
+                </fieldset>
+
+                <div class="verkrijgerKnoppen">
+                    <button class="verkrijgerToevoegen hidden" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        Voeg verkrijger toe
+                    </button>
                 </div>
             </div>
-            
 
                 <button type="submit">Verzenden</button>
         </form>

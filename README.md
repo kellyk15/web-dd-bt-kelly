@@ -149,3 +149,22 @@ Verder werkt de validatie nog niet helemaal goed zoals er in de screenshot te zi
 
 <img src ="images/read-me/read-me-05.png">
 <img src ="images/read-me/read-me-06.png">
+
+- javascript validatie
+- javascript voegt required toe aan verkrijgers als ze toegevoegd worden
+- local storage en een reset button 
+- styling verbeterd
+- light en dark mode
+
+
+## bronnen
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/fieldset
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors
+
+- https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach voor de aanroep van koppelValidatie op elk veld, zodat we niet voor elk veld aparte code hoeven te schrijven
+- Zet required op de juiste velden https://claude.ai/chat/b0f93038-9c6d-4b8b-af11-d5a1787aaa4b
+- https://claude.ai/chat/106d79d1-e0c6-4f9e-93aa-e5a424ccea49 Hulpfunctie: reset alle radio's binnen een fieldset en verberg hem
+- https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+- https://developer.mozilla.org/en-US/docs/Web/API/Event/bubbles
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent
