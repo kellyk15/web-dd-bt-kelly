@@ -1,16 +1,12 @@
-@layer reset, base, components, validatie, media-queries, animations;
-
-@layer reset {
-    *, *::after, *::before {
+*, *::after, *::before {
         box-sizing:border-box;  
     }
 
     *{
         margin: 0;
     }
-}
 
-@layer base {
+
     html{
         scroll-behavior: smooth;
 
@@ -78,9 +74,8 @@
     header label:nth-child(1):not(nav label:nth-child(1)){
         opacity: 0;
     }
-}
 
-@layer components {
+
     /* colorscheme button */
     input[type="checkbox"]{
         opacity: 0;
@@ -444,11 +439,10 @@
         height: 1.5em;
         margin-right: 0.8em;
     }
-}
 
 
 
-@layer validatie {
+
     /* error messages */
     input:user-invalid,
     .holder:has(input[type="radio"]:user-invalid) label {
@@ -593,7 +587,7 @@
             display: block;
         }
     }
-}
+
 
 
 .verkrijgerVerwijderen{
@@ -658,7 +652,7 @@ button:disabled {
 }
 
 
-@layer media-queries {
+
     /* mediaqueries */
     @media (min-width: 1440px) {
         details{
@@ -744,9 +738,8 @@ button:disabled {
             height:16px;
         }
     }
-}
 
-@layer animations {
+
     /* animation */
     /* fieldset, legend{
         animation-name: appear;
@@ -767,7 +760,6 @@ button:disabled {
         }
     }
 
-}
 
 /* nieuwe code na feedback van Vasilis */
 .no-js .instellingOfPersoon{
