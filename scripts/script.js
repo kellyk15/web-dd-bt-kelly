@@ -7,6 +7,7 @@ document.documentElement.classList.replace('no-js', 'js');
 // https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation
 
 function valideerVeld(input, error, meldingen) {
+  input.checkValidity();
   const valideren = input.validity
   if (valideren.valueMissing) {
     error.textContent = meldingen.valueMissing ?? 'Dit veld is verplicht'
