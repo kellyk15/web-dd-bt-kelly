@@ -748,12 +748,12 @@ button:disabled {
 
 @layer animations {
     /* animation */
-    fieldset, legend{
+    /* fieldset, legend{
         animation-name: appear;
         animation-timeline: view();
         animation-range: normal 25%;
         animation-fill-mode: both;
-    }
+    } */
 
     @keyframes appear{
         0%{
