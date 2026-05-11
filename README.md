@@ -164,6 +164,30 @@ Verder werkt de validatie nog niet helemaal goed zoals er in de screenshot te zi
 - aria-invalid true en aria describeby toegevoegd
 
 
+### to do's
+- reset button bevestiging
+<img src ="images/read-me/read-me-11.png">
+Ik had met de local storage nog een reset button toegevoegd, maar eerst resetten het gewoon gelijk en dat is gewoon niet handig bij een formulier. Stel dat alles is ingevuld en dat klik je perongeluk op de reset knop. Ik heb dus daarom met dialog nog een popup gemaakt die even nog een bevestiging vraagt.
+
+- styling van de buttons aanpassen -> radiobuttons
+<img src ="images/read-me/read-me-09.png">
+<img src ="images/read-me/read-me-13.png">
+
+Ik kreeg van veel mensen feedback dat de radiobuttons te veel leken op inputvelden en hierdoor raakten ze verward. Ik heb dit aan Vasilis nagevraagd en hij vertelde dat een oplossing om dit op te lossen zou kunnen zijn om het een radio button te maken. Dit maakt het in een oogopslag toch wel duidelijker.
+
+- persoon instelling
+
+<img src ="images/read-me/read-me-12.png">
+<img src ="images/read-me/read-me-13.png">
+
+Wanneer er geklikt word op instelling dan verandert de achternaam naar naam instelling en de voorletters en tussenvoegsel worden allebei disabled.
+
+- oneindig aantal verkrijgers kunnen toevoegen met javascript
+
+<img src ="images/read-me/read-me-14.png">
+
+Ik heb dit door middel van de code die Victor heeft gestuurd via teams! De html wordt opgebouwd met innerhtml en iedere krijft een andere id!
+
 ## Reflectie
 Dit was echt een hele uitdagende opdracht voor mij. Ik had nog nooit eerder gewerkt met validatie, dus in het begin was ik erg verward en snapte ik niet goed hoe ik het moest aanpakken. Uiteindelijk heb ik wel veel geleerd over validatie, vooral met HTML/CSS en toegankelijkheid. Dingen zoals aria-describedby, aria-live, aria-invalid, :user-invalid en pattern waren helemaal nieuw voor mij. Javascript-validatie vind ik nog steeds lastig en ik twijfel soms of ik het op de juiste manier heb toegepast, maar ik merk wel dat ik er veel meer van begrijp dan aan het begin van dit project.
 
@@ -187,3 +211,4 @@ Wat ik vooral heb geleerd, is dat formulieren maken veel moeilijker is dan ik va
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 - https://developer.mozilla.org/en-US/docs/Web/API/Event/bubbles
 - https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/closest

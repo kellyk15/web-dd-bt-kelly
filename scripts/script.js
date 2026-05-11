@@ -67,138 +67,208 @@ const velden = [
 
 velden.forEach(({ input, error, meldingen }) => koppelValidatie(input, error, meldingen))
 
-// Verkrijgers toevoegen en verwijderen
+// Verkrijgers: hardcoded fieldsets als no-JS fallback, dynamisch met JS
+// Bron: Victor (teamsbericht 20-03) en dan met behulp van claude
 
-const verkrijgerKnop = document.querySelector(".verkrijgerToevoegen");
-const maxVerkrijgers = document.querySelectorAll(".verkrijger").length;
+const verkrijgerKnop = document.querySelector('.verkrijgerToevoegen');
+const dynamischeContainer = document.createElement('div');
+dynamischeContainer.id = 'verkrijgers-container';
+let teller = 0;
 
-// Schakel inputs in of uit zodat verborgen verkrijgers niet meegestuurd worden
-
-function setInputsDisabled(fieldset, disabled) {
-    fieldset.querySelectorAll("input").forEach(input => {
-        input.disabled = disabled;
-    });
-}
-
-// Zet required op de juiste velden https://claude.ai/chat/b0f93038-9c6d-4b8b-af11-d5a1787aaa4b
-
-function setInputsRequired(fieldset, required) {
-    fieldset.querySelector('[id$="-voorletters"]').required = required;
-    fieldset.querySelector('[id$="-achternaam"]').required = required;
-
-    // Radio buttons: required op de eerste van elke groep zetten is genoeg
-    const radioGroepen = {};
-    fieldset.querySelectorAll('input[type="radio"]').forEach(radio => {
-        if (!radioGroepen[radio.name]) {
-            radioGroepen[radio.name] = radio;
-        }
-    });
-    Object.values(radioGroepen).forEach(radio => radio.required = required);
-}
-
-function updateToevoegKnop() {
-    const eerste = document.querySelector(".verkrijger:not(.verkrijgerHidden)");
-    const isEersteZichtbaar = eerste && !eerste.classList.contains("hidden");
-    const extraZichtbaar = document.querySelectorAll(".verkrijgerHidden.zichtbaar").length;
-    const totaal = (isEersteZichtbaar ? 1 : 0) + extraZichtbaar;
-    verkrijgerKnop.disabled = totaal >= maxVerkrijgers;
-}
-
-function hernummer() {
-    const zichtbaar = [...document.querySelectorAll(".verkrijger")].filter(f => {
-        if (f.classList.contains("verkrijgerHidden")) {
-            return f.classList.contains("zichtbaar");
-        } else {
-            return !f.classList.contains("hidden");
-        }
-    });
-
-    zichtbaar.forEach((fieldset, index) => {
-        const nummer = index + 1;
-
-        const legend = fieldset.querySelector(":scope > legend");
-        if (legend) legend.textContent = `Verkrijger ${nummer}`;
-
-        const knop = fieldset.querySelector(".verkrijgerVerwijderenIndividueel");
-        if (knop) knop.setAttribute("aria-label", `Verwijder verkrijger ${nummer}`);
-    });
-
-    // Laat screen readers weten hoeveel verkrijgers er zijn
-    const status = document.getElementById("verkrijger-status");
-    if (status) status.textContent = `${zichtbaar.length} verkrijger${zichtbaar.length === 1 ? "" : "s"} actief`;
-}
-
-function verwijderVerkrijger(fieldset) {
-    fieldset.querySelectorAll("input").forEach(input => {
-        if (input.type === "radio") input.checked = false;
-        else input.value = "";
-    });
-
-    if (!fieldset.classList.contains("verkrijgerHidden")) {
-        fieldset.classList.add("hidden");
-        setInputsDisabled(fieldset, true);
-        setInputsRequired(fieldset, false);
-    } else {
-        fieldset.classList.remove("zichtbaar");
-        setInputsDisabled(fieldset, true);
-        setInputsRequired(fieldset, false);
-    }
-
-    updateToevoegKnop();
-    hernummer();
-    verkrijgerKnop.scrollIntoView({ behavior: "smooth", block: "nearest" });
-}
-
-function verkrijgerToevoegen() {
-    const eerste = document.querySelector(".verkrijger:not(.verkrijgerHidden)");
-    if (eerste && eerste.classList.contains("hidden")) {
-        eerste.classList.remove("hidden");
-        setInputsDisabled(eerste, false);
-        setInputsRequired(eerste, true);
-        eerste.scrollIntoView({ behavior: "smooth", block: "start" });
-        updateToevoegKnop();
-        hernummer();
-        return;
-    }
-
-    const volgende = document.querySelector(".verkrijgerHidden:not(.zichtbaar)");
-    if (!volgende) return;
-
-    volgende.classList.add("zichtbaar");
-    setInputsDisabled(volgende, false);
-    setInputsRequired(volgende, true);
-    volgende.scrollIntoView({ behavior: "smooth", block: "start" });
-    updateToevoegKnop();
-    hernummer();
-}
-
-document.querySelectorAll(".verkrijgerVerwijderenIndividueel").forEach(knop => {
-    const fieldset = knop.closest(".verkrijger");
-    knop.addEventListener("click", () => verwijderVerkrijger(fieldset));
+// Verberg hardcoded verkrijgers en disable hun inputs (no-JS fallback blijft in DOM)
+document.querySelectorAll('.verkrijger').forEach(f => {
+    f.setAttribute('aria-hidden', 'true');
+    f.style.display = 'none';
+    f.querySelectorAll('input').forEach(i => i.disabled = true);
 });
 
-verkrijgerKnop.addEventListener("click", verkrijgerToevoegen);
+// Voeg dynamische container in vóór de .verkrijgerKnoppen div
+document.querySelector('.verkrijgerKnoppen').before(dynamischeContainer);
 
+// Bouw een verkrijger fieldset op basis van volgnummer en uniek ID
+function maakVerkrijgerFieldset(nummer, uniekId) {
+    const fs = document.createElement('fieldset');
+    fs.className = 'mainFieldset test verkrijger dynamisch';
+    fs.dataset.verkrijgerId = uniekId;
 
+    fs.innerHTML = `
+        <div class="wrapper-verkrijger-btn">
+            <legend>Verkrijger ${nummer}</legend>
+            <button class="verkrijgerVerwijderenIndividueel" type="button"
+                    aria-label="Verwijder verkrijger ${nummer}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                     stroke-width="1.5" stroke="currentColor" class="size-6" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                </svg>
+                Verwijder verkrijger
+            </button>
+        </div>
+
+        <fieldset class="mainFieldset instellingOfPersoon">
+            <legend>Gaat het om een persoon of instelling?</legend>
+            <div class="mainHolder">
+                <div class="holder">
+                  <label for="verkrijger${uniekId}-type-persoon">Persoon
+                      <input type="radio" id="verkrijger${uniekId}-type-persoon"
+                            name="verkrijger${uniekId}-type" value="persoon" checked>
+                  </label>
+              </div>
+              <div class="holder">
+                  <label for="verkrijger${uniekId}-type-instelling">Instelling
+                      <input type="radio" id="verkrijger${uniekId}-type-instelling"
+                            name="verkrijger${uniekId}-type" value="instelling">
+                  </label>
+              </div>
+            </div>
+        </fieldset>
+
+        <div class="name">
+            <div>
+                <label for="verkrijger${uniekId}-bsnRsin">BSN/RSIN
+                    <input id="verkrijger${uniekId}-bsnRsin" type="text"
+                           pattern="[0-9]{8,9}" inputmode="numeric" maxlength="9"
+                           title="Vul een geldig BSN/RSIN in (8 of 9 cijfers)"
+                           aria-describedby="error-verkrijger${uniekId}-bsnRsin">
+                </label>
+                <p class="error" id="error-verkrijger${uniekId}-bsnRsin">
+                    Vul een geldig BSN/RSIN in (8 of 9 cijfers)
+                </p>
+            </div>
+        </div>
+
+        <div class="name">
+            <div>
+                <label for="verkrijger${uniekId}-voorletters">Voorletter(s)
+                    <input id="verkrijger${uniekId}-voorletters" type="text"
+                           pattern="[A-Za-z]+" title="Vul alleen letters in" required
+                           aria-describedby="error-verkrijger${uniekId}-voorletters">
+                </label>
+                <p class="error" id="error-verkrijger${uniekId}-voorletters">Vul voorletters in</p>
+            </div>
+            <div>
+                <label for="verkrijger${uniekId}-tussenvoegsel">Tussenvoegsel(s)
+                    <input id="verkrijger${uniekId}-tussenvoegsel" type="text">
+                </label>
+            </div>
+            <div class="achternaam">
+                <label for="verkrijger${uniekId}-achternaam">
+                    <span>Achternaam</span>
+                    <input id="verkrijger${uniekId}-achternaam" type="text"
+                           pattern="[A-Za-z]+" title="Vul alleen letters in" required
+                           aria-describedby="error-verkrijger${uniekId}-achternaam">
+                </label>
+                <p class="error" id="error-verkrijger${uniekId}-achternaam">Vul achternaam in</p>
+            </div>
+        </div>
+
+        <fieldset class="mainFieldset test">
+            <legend>Krijgt deze verkrijger het hele vermogen?</legend>
+            <div class="mainHolder">
+                <div class="holder">
+                    <label for="verkrijger${uniekId}-heleVermogen-ja">Ja</label>
+                    <input type="radio" id="verkrijger${uniekId}-heleVermogen-ja"
+                           name="verkrijger${uniekId}-heleVermogen" value="ja" required>
+                </div>
+                <div class="holder">
+                    <label for="verkrijger${uniekId}-heleVermogen-nee">Nee</label>
+                    <input type="radio" id="verkrijger${uniekId}-heleVermogen-nee"
+                           name="verkrijger${uniekId}-heleVermogen" value="nee">
+                </div>
+            </div>
+            <p class="error" id="error-verkrijger${uniekId}-heleVermogen">Maak een keuze</p>
+        </fieldset>
+
+        <fieldset class="mainFieldset test">
+            <legend>Doet deze verkrijger een beroep op diens legitieme portie?</legend>
+            <div class="mainHolder">
+                <div class="holder">
+                    <label for="verkrijger${uniekId}-legitiemePortie-ja">Ja</label>
+                    <input type="radio" id="verkrijger${uniekId}-legitiemePortie-ja"
+                           name="verkrijger${uniekId}-legitiemePortie" value="ja" required>
+                </div>
+                <div class="holder">
+                    <label for="verkrijger${uniekId}-legitiemePortie-nee">Nee</label>
+                    <input type="radio" id="verkrijger${uniekId}-legitiemePortie-nee"
+                           name="verkrijger${uniekId}-legitiemePortie" value="nee">
+                </div>
+            </div>
+            <p class="error" id="error-verkrijger${uniekId}-legitiemePortie">Maak een keuze</p>
+        </fieldset>
+    `;
+
+    // Persoon/instelling toggle
+    fs.querySelectorAll(`input[name="verkrijger${uniekId}-type"]`).forEach(radio => {
+        radio.addEventListener('change', function () {
+            const span = fs.querySelector(`label[for="verkrijger${uniekId}-achternaam"] span`);
+            const voorletters = fs.querySelector(`#verkrijger${uniekId}-voorletters`);
+            const tussenvoegsel = fs.querySelector(`#verkrijger${uniekId}-tussenvoegsel`);
+            if (this.value === 'instelling') {
+                span.textContent = 'Naam instelling';
+                voorletters.disabled = true;
+                tussenvoegsel.disabled = true;
+            } else {
+                span.textContent = 'Achternaam';
+                voorletters.disabled = false;
+                tussenvoegsel.disabled = false;
+            }
+        });
+    });
+
+    // Verwijder-knop
+    fs.querySelector('.verkrijgerVerwijderenIndividueel').addEventListener('click', () => {
+        fs.remove();
+        hernummer();
+        verkrijgerKnop.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    return fs;
+}
+
+// Hernummer alle actieve verkrijgers
+function hernummer() {
+    dynamischeContainer.querySelectorAll('.verkrijger').forEach((fs, i) => {
+        const nummer = i + 1;
+        const legend = fs.querySelector(':scope > .wrapper-verkrijger-btn > legend');
+        if (legend) legend.textContent = `Verkrijger ${nummer}`;
+        const knop = fs.querySelector('.verkrijgerVerwijderenIndividueel');
+        if (knop) knop.setAttribute('aria-label', `Verwijder verkrijger ${nummer}`);
+    });
+}
+
+// Voeg een nieuwe verkrijger toe
+// https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
+// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView feedback van victor
+
+function voegVerkrijgerToe() {
+    teller++;
+    const nummer = dynamischeContainer.querySelectorAll('.verkrijger').length + 1;
+    const fs = maakVerkrijgerFieldset(nummer, teller);
+    console.log('fieldset aangemaakt:', fs);
+    dynamischeContainer.appendChild(fs);
+    console.log('container na toevoegen:', dynamischeContainer.innerHTML);
+    fs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    fs.querySelector('input')?.focus();
+}
+
+verkrijgerKnop.addEventListener('click', voegVerkrijgerToe);
+
+// Ja/nee voor "zijn er verkrijgers zonder aangifte"
 document.querySelectorAll('input[name="geenAangifte"]').forEach(radio => {
     radio.addEventListener('change', function () {
-        const eersteVerkrijger = document.querySelector(".verkrijger:not(.verkrijgerHidden)");
         if (this.value === 'ja') {
-            eersteVerkrijger.classList.remove("hidden");
-            setInputsDisabled(eersteVerkrijger, false);
-            setInputsRequired(eersteVerkrijger, true);
-            verkrijgerKnop.classList.remove("hidden");
+            verkrijgerKnop.classList.remove('hidden');
+            // Voeg automatisch eerste toe als er nog geen zijn
+            if (dynamischeContainer.querySelectorAll('.verkrijger').length === 0) {
+                voegVerkrijgerToe();
+            }
         } else {
-            verwijderVerkrijger(eersteVerkrijger);
-            verkrijgerKnop.classList.add("hidden");
+            // Verwijder alle dynamische verkrijgers en verberg de knop
+            dynamischeContainer.innerHTML = '';
+            teller = 0;
+            verkrijgerKnop.classList.add('hidden');
         }
     });
 });
-
-// Zet alle verborgen verkrijgers op disabled bij laden
-document.querySelectorAll(".verkrijgerHidden").forEach(f => setInputsDisabled(f, true));
-
-updateToevoegKnop();
 
 
 // Hulpfunctie: reset alle radio's binnen een fieldset en verberg hem
@@ -212,19 +282,25 @@ function resetEnVerberg(fieldset) {
   fieldset.classList.add('hidden');
 }
 
+// https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
 // Getrouwd? 
 const getrouwdNee = document.getElementById('1b-1-nee');
-const getrouwdJa  = document.getElementById('1b-1-ja');
+const getrouwdJa = document.getElementById('1b-1-ja');
 
-const fsHuwelijksVoorwaarden = document.querySelector('[name="huwelijkseVoorwaarden"]')
-                                ?.closest('fieldset');
-const fsFinaalVerrekenbeding  = document.querySelector('[name="finaalVerrekenbeding"]')
-                                ?.closest('fieldset');
-const fsDatumHuwelijks        = document.getElementById('datumHuwelijkseVoorwaarden')
-                                ?.closest('fieldset');
+const fsHuwelijksVoorwaarden = document
+    .querySelector('[name="huwelijkseVoorwaarden"]')
+    ?.closest('fieldset');
+
+const fsFinaalVerrekenbeding = document
+    .querySelector('[name="finaalVerrekenbeding"]')
+    ?.closest('fieldset');
+
+const fsDatumHuwelijks = document
+    .getElementById('datumHuwelijkseVoorwaarden')
+    ?.closest('fieldset');
 
 getrouwdJa?.addEventListener('change', () => {
-  fsHuwelijksVoorwaarden?.classList.remove('hidden');
+    fsHuwelijksVoorwaarden?.classList.remove('hidden');
 });
 
 getrouwdNee?.addEventListener('change', () => {
@@ -260,10 +336,10 @@ finaalNee?.addEventListener('change', () => {
 
 // Kinderen?
 const kinderenNee = document.getElementById('1c-1-nee');
-const kinderenJa  = document.getElementById('1c-1-ja');
+const kinderenJa = document.getElementById('1c-1-ja');
 
 const fsKinderenOverleden = document.querySelector('[name="kinderenOverleden"]')?.closest('fieldset');
-const fsKleinkinderen     = document.querySelector('[name="kleinkinderen"]')?.closest('fieldset');
+const fsKleinkinderen = document.querySelector('[name="kleinkinderen"]')?.closest('fieldset');
 
 kinderenJa?.addEventListener('change', () => {
   fsKinderenOverleden?.classList.remove('hidden');
@@ -341,10 +417,39 @@ document.querySelector('form').addEventListener('submit', () => {
 })
 
 // Alle gegevens wissen bij klikken op reset-knop
-const deleteButton = document.getElementById('reset-btn');
-	deleteButton.addEventListener('click', resetInfo);
+// const deleteButton = document.getElementById('reset-btn');
+// deleteButton.addEventListener('click', resetInfo);
 
-function resetInfo() {
+// function resetInfo() {
+//   localStorage.removeItem('aangifteGegevens');
+//   location.reload();
+// }
+
+
+const resetDialog = document.getElementById('reset-dialog');
+const deleteButton = document.getElementById('reset-btn');
+
+deleteButton.addEventListener('click', openResetDialog);
+
+function openResetDialog() {
+  resetDialog.showModal();
+}
+
+document.getElementById('dialog-annuleer').addEventListener('click', sluitResetDialog);
+
+function sluitResetDialog() {
+  resetDialog.close();
+}
+
+document.getElementById('dialog-bevestig').addEventListener('click', bevestigReset);
+
+function bevestigReset() {
   localStorage.removeItem('aangifteGegevens');
   location.reload();
+}
+
+resetDialog.addEventListener('click', sluitBuitenDialog);
+
+function sluitBuitenDialog(e) {
+  if (e.target === resetDialog) resetDialog.close();
 }

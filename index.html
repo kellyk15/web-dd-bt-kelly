@@ -2,7 +2,6 @@
 <html class="no-js" lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aangifte erfbelasting</title>
 
     <link href="styles/style.css" rel="stylesheet">
@@ -387,6 +386,7 @@
                             </label>
                             <datalist id="steden-lijst">
                                 <option value="Amsterdam">
+                                <option value="Abcoude">
                                 <option value="Rotterdam">
                                 <option value="Den Haag">
                                 <option value="Utrecht">
@@ -822,6 +822,23 @@
                 <fieldset class="mainFieldset test verkrijger hidden">
                     <legend>Verkrijger 1</legend>
 
+                    <!-- vragen of het een persoon of instelling is -->
+                    <fieldset class="mainFieldset instellingOfPersoon">
+                        <legend>Gaat het om een persoon of instelling?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                            <label for="verkrijger1-type-persoon">Persoon</label>
+                            <input type="radio" id="verkrijger1-type-persoon" 
+                                    name="verkrijger1-type" value="persoon" required checked>
+                            </div>
+                            <div class="holder">
+                            <label for="verkrijger1-type-instelling">Instelling</label>
+                            <input type="radio" id="verkrijger1-type-instelling" 
+                                    name="verkrijger1-type" value="instelling">
+                            </div>
+                        </div>
+                    </fieldset>
+
                     <div class="name">
                         <div>
                             <label for="verkrijger1-bsnRsin">Bsn/RSIN
@@ -844,7 +861,8 @@
                             </label>
                         </div>
                         <div class="achternaam">
-                            <label for="verkrijger1-achternaam">Achternaam
+                            <label for="verkrijger1-achternaam">
+                                <span>Achternaam</span>
                                 <input id="verkrijger1-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger1-achternaam">
                             </label>
                             <p class="error" id="error-verkrijger1-achternaam">Vul achternaam in</p>
@@ -886,6 +904,8 @@
                 <fieldset class="mainFieldset test verkrijger verkrijgerHidden hidden">
                     <div class="wrapper-verkrijger-btn">
                         <legend>Verkrijger 2</legend>
+
+                        
                         <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
@@ -893,6 +913,21 @@
                             Verwijder verkrijger
                         </button>
                     </div>
+                    <fieldset class="mainFieldset instellingOfPersoon">
+                        <legend>Gaat het om een persoon of instelling?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                            <label for="verkrijger2-type-persoon">Persoon</label>
+                            <input type="radio" id="verkrijger2-type-persoon" 
+                                    name="verkrijger2-type" value="persoon" required checked>
+                            </div>
+                            <div class="holder">
+                            <label for="verkrijger2-type-instelling">Instelling</label>
+                            <input type="radio" id="verkrijger2-type-instelling" 
+                                    name="verkrijger2-type" value="instelling">
+                            </div>
+                        </div>
+                    </fieldset>
 
                     <div class="name">
                         <div>
@@ -916,7 +951,8 @@
                             </label>
                         </div>
                         <div class="achternaam">
-                            <label for="verkrijger2-achternaam">Achternaam
+                            <label for="verkrijger2-achternaam">
+                                <span>Achternaam</span>
                                 <input id="verkrijger2-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger2-achternaam">
                             </label>
                             <p class="error" id="error-verkrijger2-achternaam">Vul achternaam in</p>
@@ -958,6 +994,8 @@
                 <fieldset class="mainFieldset test verkrijger verkrijgerHidden hidden">
                     <div class="wrapper-verkrijger-btn">
                         <legend>Verkrijger 3</legend>
+
+                        
                         <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 3">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
@@ -965,7 +1003,22 @@
                             Verwijder verkrijger
                         </button>
                     </div>
-
+                    
+                    <fieldset class="mainFieldset instellingOfPersoon">
+                        <legend>Gaat het om een persoon of instelling?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                            <label for="verkrijger3-type-persoon">Persoon</label>
+                            <input type="radio" id="verkrijger3-type-persoon" 
+                                    name="verkrijger3-type" value="persoon" required checked>
+                            </div>
+                            <div class="holder">
+                            <label for="verkrijger3-type-instelling">Instelling</label>
+                            <input type="radio" id="verkrijger3-type-instelling" 
+                                    name="verkrijger3-type" value="instelling">
+                            </div>
+                        </div>
+                    </fieldset>
                     <div class="name">
                         <div>
                             <label for="verkrijger3-bsnRsin">Bsn/RSIN
@@ -988,7 +1041,7 @@
                             </label>
                         </div>
                         <div class="achternaam">
-                            <label for="verkrijger3-achternaam">Achternaam
+                            <label for="verkrijger3-achternaam"><span>Achternaam</span>
                                 <input id="verkrijger3-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger3-achternaam">
                             </label>
                             <p class="error" id="error-verkrijger3-achternaam">Vul achternaam in</p>
@@ -1030,6 +1083,8 @@
                 <fieldset class="mainFieldset test verkrijger verkrijgerHidden hidden">
                     <div class="wrapper-verkrijger-btn">
                         <legend>Verkrijger 4</legend>
+
+                        
                         <button class="verkrijgerVerwijderenIndividueel" type="button" aria-label="Verwijder verkrijger 4">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
@@ -1037,7 +1092,22 @@
                             Verwijder verkrijger
                         </button>
                     </div>
-
+                    
+                    <fieldset class="mainFieldset instellingOfPersoon">
+                        <legend>Gaat het om een persoon of instelling?</legend>
+                        <div class="mainHolder">
+                            <div class="holder">
+                            <label for="verkrijger4-type-persoon">Persoon</label>
+                            <input type="radio" id="verkrijger4-type-persoon" 
+                                    name="verkrijger4-type" value="persoon" required checked>
+                            </div>
+                            <div class="holder">
+                            <label for="verkrijger4-type-instelling">Instelling</label>
+                            <input type="radio" id="verkrijger4-type-instelling" 
+                                    name="verkrijger4-type" value="instelling">
+                            </div>
+                        </div>
+                    </fieldset>
                     <div class="name">
                         <div>
                             <label for="verkrijger4-bsnRsin">Bsn/RSIN
@@ -1060,7 +1130,8 @@
                             </label>
                         </div>
                         <div class="achternaam">
-                            <label for="verkrijger4-achternaam">Achternaam
+                            <label for="verkrijger4-achternaam">
+                                <span>Achternaam</span>
                                 <input id="verkrijger4-achternaam" type="text" pattern="[A-Za-z]+" title="Vul alleen letters in" aria-invalid="true" aria-describedby="error-verkrijger4-achternaam">
                             </label>
                             <p class="error" id="error-verkrijger4-achternaam">Vul achternaam in</p>
@@ -1111,6 +1182,15 @@
                 <button type="submit">Verzenden</button>
         </form>
     </section>
+
+    <dialog id="reset-dialog" aria-labelledby="dialog-titel" aria-describedby="dialog-tekst">
+        <h2 id="dialog-titel">Gegevens wissen?</h2>
+        <p id="dialog-tekst">Weet u zeker dat u alle ingevulde gegevens wilt wissen? Dit kan niet ongedaan worden gemaakt.</p>
+        <div class="dialog-btns">
+            <button type="button" id="dialog-annuleer">Annuleren</button>
+            <button type="button" id="dialog-bevestig">Ja, alles wissen</button>
+        </div>
+    </dialog>
 
     <script src="scripts/script.js"></script>
 </body>
