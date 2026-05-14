@@ -844,6 +844,10 @@ label:has(input:disabled) {
         width: 16px;
         height:16px;
     }
+
+    details ul li{
+        font-size: 0.8em;
+    }
 }
 
 
