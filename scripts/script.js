@@ -77,9 +77,7 @@ let teller = 0;
 
 // Verberg hardcoded verkrijgers en disable hun inputs (no-JS fallback blijft in DOM)
 document.querySelectorAll('.verkrijger').forEach(f => {
-    f.setAttribute('aria-hidden', 'true');
-    f.style.display = 'none';
-    f.querySelectorAll('input').forEach(i => i.disabled = true);
+    f.remove();
 });
 
 // Voeg dynamische container in vóór de .verkrijgerKnoppen div
@@ -228,6 +226,7 @@ function maakVerkrijgerFieldset(nummer, uniekId) {
 function hernummer() {
     dynamischeContainer.querySelectorAll('.verkrijger').forEach((fs, i) => {
         const nummer = i + 1;
+        // :scope zoekt vanaf fs ipv :root 
         const legend = fs.querySelector(':scope > .wrapper-verkrijger-btn > legend');
         if (legend) legend.textContent = `Verkrijger ${nummer}`;
         const knop = fs.querySelector('.verkrijgerVerwijderenIndividueel');
@@ -244,9 +243,13 @@ function voegVerkrijgerToe() {
     const nummer = dynamischeContainer.querySelectorAll('.verkrijger').length + 1;
     const fs = maakVerkrijgerFieldset(nummer, teller);
     console.log('fieldset aangemaakt:', fs);
+
+    // appendChild voegt toe aan het einde
     dynamischeContainer.appendChild(fs);
     console.log('container na toevoegen:', dynamischeContainer.innerHTML);
     fs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Focus op het eerste veld van de nieuwe verkrijger
     fs.querySelector('input')?.focus();
 }
 
